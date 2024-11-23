@@ -1,0 +1,37 @@
+// // _mixins.scss
+
+// // Mixin for Mobile S devices (below 480px)
+// @mixin mobile-s {
+//    @media (max-width: 479px) {
+//      @content;
+//    }
+// //  }
+ 
+//  // Mixin for Mobile M devices (480px to 767px)
+//  @mixin mobile-m {
+//    @media (min-width: 480px) and (max-width: 767px) {
+//      @content;
+//    }
+//  }
+ 
+//  // Mixin for Tablet devices (768px to 1023px)
+//  @mixin tablet {
+//    @media (min-width: 768px) and (max-width: 1023px) {
+//      @content;
+//    }
+//  }
+ 
+//  // Mixin for Laptop devices (1024px to 1365px)
+//  @mixin laptop {
+//    @media (min-width: 1024px) and (max-width: 1365px) {
+//      @content;
+//    }
+//  }
+ 
+//  // Mixin for Desktop L devices (1366px and above)
+//  @mixin laptop-l {
+//    @media (min-width: 1366px) {
+//      @content;
+//    }
+//  }
+ 
