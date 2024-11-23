@@ -1,29 +1,4 @@
 .navbar {
-   background-color: #333;
-   padding: 1rem;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-}
-
-.brand h1 {
-   color: white;
-   font-size: 1.8rem;
-}
-
-.navList {
-   list-style: none;
-   display: flex;
-   gap: 1.5rem;
-}
-
-.navItem {
-   font-family: "Kollektif", sans-serif;
-   color: white;
-   cursor: pointer;
-   font-size: 1.1rem;
-
-   &:hover {
-      color: #00aaff;
-   }
+   height: 120px;
+   background-color: gray;
 }
