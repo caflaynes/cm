@@ -19,7 +19,7 @@ body {
 }
 
 html {
-  font-size: var(--base-font-size); // Base font size for rem calculations (defines the root font size)
+  font-size: var(--fs-base); // Base font size for rem calculations (defines the root font size)
   -moz-text-size-adjust: none;      // Disable text size adjustment in Firefox
   -webkit-text-size-adjust: none;   // Disable text size adjustment in WebKit browsers (Safari)
   text-size-adjust: none;           // Disable text size adjustment in all browsers (to maintain consistency)
