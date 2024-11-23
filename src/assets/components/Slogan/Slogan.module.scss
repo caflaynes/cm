@@ -1,0 +1,13 @@
+.slogan {
+   &__wrapper {
+      max-width: 1078px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      
+   }
+}
