@@ -1,13 +1,13 @@
-import './App.scss'
-import { Navbar } from './assets/components';
+import "./App.scss";
+import { Slogan, Navbar } from "./assets/components";
 
 function App() {
-
-  return (
-    <>
-      <Navbar />
-    </>
-  )
+   return (
+      <>
+         <Slogan slogan="COLLECT MEMORIES, NOT THINGS" />
+         <Navbar />
+      </>
+   );
 }
 
-export default App
+export default App;
