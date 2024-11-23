@@ -1,0 +1,44 @@
+// $base-path: "../assets/fonts";
+$base-path: "~src/assets/fonts";
+
+$fonts: (
+  "Kollektif": "#{$base-path}/Kollektif",  // Dynamic path using the base-path variable
+  "Spectral": "#{$base-path}/Spectral"
+);
+
+@mixin font-face($family, $weight, $style, $file) {
+   @font-face {
+     font-family: $family; 
+     src: url('#{$file}.woff2') format('woff2'),  
+          url('#{$file}.woff') format('woff'); 
+     font-weight: $weight; 
+     font-style: $style;   
+     font-display: swap;
+   }
+}
+
+@each $family, $path in $fonts {
+  
+   @if $family == 'Kollektif' {
+     @include font-face($family, 400, normal, "#{$path}/#{$family}-regular");  // Regular weight
+     @include font-face($family, 700, normal, "#{$path}/#{$family}-bold");     // Bold weight
+   }
+ 
+   @else if $family == 'Spectral' {
+     @include font-face($family, 200, normal, "#{$path}/#{$family}-extralight");  // Extra light
+     @include font-face($family, 200, italic, "#{$path}/#{$family}-extralightitalic"); // Extra light italic
+     @include font-face($family, 300, normal, "#{$path}/#{$family}-light");        // Light
+     @include font-face($family, 300, italic, "#{$path}/#{$family}-lightitalic");   // Light italic
+     @include font-face($family, 400, normal, "#{$path}/#{$family}-regular");       // Regular
+     @include font-face($family, 400, italic, "#{$path}/#{$family}-italic");        // Italic
+     @include font-face($family, 500, normal, "#{$path}/#{$family}-medium");        // Medium
+     @include font-face($family, 600, normal, "#{$path}/#{$family}-semibold");      // Semibold
+     @include font-face($family, 700, normal, "#{$path}/#{$family}-bold");          // Bold
+     @include font-face($family, 800, normal, "#{$path}/#{$family}-extrabold");     // Extra bold
+   }
+ 
+   @else {
+     @include font-face($family, 400, normal, "#{$path}/#{$family}-regular");  // Regular
+     @include font-face($family, 700, normal, "#{$path}/#{$family}-bold");     // Bold
+   }
+ }

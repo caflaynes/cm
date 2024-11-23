@@ -1,0 +1,77 @@
+// ========================
+// Core Resets
+// ========================
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // Ensure padding and border are included in element's total width and height
+  margin: 0;              // Remove default margin from all elements to prevent unintended spacing
+  padding: 0;             // Remove default padding from all elements for consistency
+  font: inherit;          // Inherit font settings from parent elements for uniform typography
+}
+
+// ========================
+// HTML and Body Resets
+// ========================
+html,
+body {
+  height: 100%;           // Allow the body to take the full height of the viewport for better layout control
+}
+
+html {
+  font-size: var(--base-font-size); // Base font size for rem calculations (defines the root font size)
+  -moz-text-size-adjust: none;      // Disable text size adjustment in Firefox
+  -webkit-text-size-adjust: none;   // Disable text size adjustment in WebKit browsers (Safari)
+  text-size-adjust: none;           // Disable text size adjustment in all browsers (to maintain consistency)
+  -webkit-scroll-behavior: smooth;  // Enable smooth scrolling for older Safari versions
+  scroll-behavior: smooth;          // Enable smooth scrolling for navigation in modern browsers
+}
+
+// ========================
+// List Styles Reset
+// ========================
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;       // Remove bullet points and numbers from lists for a clean appearance
+  padding-left: 0;        // Reset padding for lists to align with the overall reset
+}
+
+// ========================
+// Image Styles Reset
+// ========================
+img,
+picture {
+  max-width: 100%;        // Prevent images from exceeding their container's width, maintaining responsiveness
+  display: block;         // Remove extra space below images caused by inline display, fixing layout issues
+}
+
+// ========================
+// Link Styles Reset
+// ========================
+a,
+a:visited,
+a:active {
+  text-decoration: none;  // Removes underline from links for a cleaner appearance and modern look
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink; // WebKit-specific property to prevent underlines from sticking to text
+  text-decoration-skip-ink: auto;    // Allows underlines to skip the ink of the text for smoother appearance
+  color: currentColor;               // Sets link color to match the current text color of the parent
+}
+
+// ========================
+// Element Margin Reset
+// ========================
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0; // Remove bottom margin from these elements to maintain layout consistency and avoid unnecessary spacing
+}
