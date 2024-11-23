@@ -19,12 +19,16 @@ body {
 }
 
 html {
-  font-size: var(--fs-base); // Base font size for rem calculations (defines the root font size)
   -moz-text-size-adjust: none;      // Disable text size adjustment in Firefox
   -webkit-text-size-adjust: none;   // Disable text size adjustment in WebKit browsers (Safari)
   text-size-adjust: none;           // Disable text size adjustment in all browsers (to maintain consistency)
   -webkit-scroll-behavior: smooth;  // Enable smooth scrolling for older Safari versions
   scroll-behavior: smooth;          // Enable smooth scrolling for navigation in modern browsers
+}
+
+body {
+  font-size: var(--fs-base); // Base font size for rem calculations (defines the root font size)
+  background-color: var(--clr-bg-primary); // Set the background color of the body to the primary background color
 }
 
 // ========================
