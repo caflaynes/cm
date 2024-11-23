@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <Navbar brandName="My Website" />
+      <Navbar brandName="ClickMate" />
     </>
   )
 }

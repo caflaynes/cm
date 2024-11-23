@@ -4,10 +4,9 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; // Ensure padding and border are included in element's total width and height
-  margin: 0;              // Remove default margin from all elements to prevent unintended spacing
-  padding: 0;             // Remove default padding from all elements for consistency
-  font: inherit;          // Inherit font settings from parent elements for uniform typography
+  box-sizing: border-box;
+  padding: 0;
+  font: inherit;
 }
 
 // ========================
