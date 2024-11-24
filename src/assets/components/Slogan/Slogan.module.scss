@@ -1,3 +1,11 @@
+// Slogan.module.scss
+@use './../../styles/abstracts/variables' as *;
+@use './../../styles/abstracts/functions' as *;
+
+$ff-slogan: 'Kollektif', sans-serif; // Heading font
+$fs-slogan: font-size('body', 'xsmall'); // 12px
+$fw-slogan: font-weight('medium');
+
 .slogan {
    height: 30px;
    background-color: var(--clr-bg-primary);
@@ -10,5 +18,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
+   }
+   &__text {
+      font-family: $ff-slogan;
+      font-size: $fs-slogan;
+      font-weight: $fw-slogan;
    }
 }
