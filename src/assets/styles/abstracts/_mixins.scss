@@ -3,15 +3,6 @@
 @use 'sass:map';
 
 
-// Mixin to apply font size
-@mixin font-size($category, $size-key) {
-   font-size: map.get(map.get(var.$font-sizes, $category), $size-key);
- }
- 
- @mixin padding-block($size-key) {
-   padding-block: map.get(var.$spacing-sizes, $size-key);
- }
-
 // // Mixin for Mobile S devices (below 480px)
 // @mixin mobile-s {
 //    @media (max-width: 479px) {

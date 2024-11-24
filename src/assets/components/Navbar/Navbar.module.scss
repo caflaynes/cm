@@ -1,8 +1,20 @@
 // _navbar.scss
+@use './../../styles/abstracts/variables' as *;
+@use './../../styles/abstracts/functions' as *;
+
+$clr-bg-navbar: background-color('primary');
+$ss-gap-navlist: gap('500'); // 24px
+$ff-nav-items: font-family('Kollektif'); // Heading font
+$fs-nav-items: font-size('body', 'small'); // 14px
+$fw-nav-items: font-weight('bold');
+$clr-text-navlist: color('text');
+$clr-hover-navlist: color('hover');
+
 
 .navbar {
    height: 5.625rem; // 90px
-   background-color: var(--clr-bg-navbar);
+   background-color: $clr-bg-navbar;
+
    &__wrapper {
       max-width: 1078px;
       width: 100%;
@@ -13,25 +25,28 @@
       justify-content: space-between;
       align-items: center;
    }
+
    &__brand {
       img {
          height: 5rem;
          width: auto;
       }
    }
+
    &__list {
       display: flex;
-      gap: var(--ss-gap-navlist); 
+      gap: $ss-gap-navlist;
    }
+
    &__item {
       a {
-         font-family: var(--ff-nav-items);
-         font-size: var(--fs-nav-items); 
-         font-weight: var(--fw-nav-items);
-         color: var(--clr-text-navlist);
+         font-family: $ff-nav-items;
+         font-size: $fs-nav-items;
+         font-weight: $fw-nav-items;
+         color: $clr-text-navlist;
 
          &:hover {
-            color: var(--clr-hover-navlist); // Change color on hover
+            color: $clr-hover-navlist;
          }
       }
    }

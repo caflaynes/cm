@@ -1,3 +1,4 @@
+@use 'sass:map';
 // ========================
 // Font Sizes Configuration
 // ========================
@@ -80,51 +81,4 @@ $spacing-sizes: (
    // Default Settings
    --fs-base: 16px;
    --clr-bg-base: #E9E8E8;
-
-   // Navigation Bar
-   --ff-nav-items: font-family('Kollektif');
-   --fs-nav-items: font-size('body', 'small');
-   --fw-nav-items: font-weight('bold');
-   --clr-bg-navbar: background-color('primary');
-   --clr-text-navlist: color('text');
-   --clr-hover-navlist: color('hover');
-   --ss-gap-navlist: gap('500');
-}
-
-
-@use 'sass:map';
-
-// Function to get font family
-@function font-family($family-key) {
-  @return map.get($font-families, $family-key); // Use 'map.get' instead of 'map-get'
-}
-
-// Function to get font size
-@function font-size($category, $size-key) {
-  @return map.get(map.get($font-sizes, $category), $size-key); // Use 'map.get' instead of 'map-get'
-}
-
-// Function to get font weight
-@function font-weight($weight-key) {
-  @return map.get($font-weights, $weight-key); // Use 'map.get' instead of 'map-get'
-}
-
-// Function to get background color
-@function background-color($color-key) {
-  @return map.get($background-colors, $color-key); // Use 'map.get' instead of 'map-get'
-}
-
-// Function to get color
-@function color($color-key) {
-  @return map.get($colors, $color-key); // Use 'map.get' instead of 'map-get'
-}
-
-// Function to get spacing size
-@function spacing-size($size-key) {
-  @return map.get($spacing-sizes, $size-key); // Use 'map.get' instead of 'map-get'
-}
-
-// Function to get gap size
-@function gap-size($size-key) {
-  @return map.get($spacing-sizes, $size-key); // Use 'map.get' instead of 'map-get'
 }
