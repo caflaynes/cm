@@ -3,7 +3,6 @@
 @use './../../styles/abstracts/functions' as *;
 
 $clr-bg-navbar: background-color('primary');
-$ss-gap-navlist: gap('500'); // 24px
 $ff-nav-items: 'Kollektif', sans-serif; // Heading font
 $fs-nav-items: font-size('body', 'small'); // 14px
 $fw-nav-items: font-weight('bold');
@@ -43,7 +42,7 @@ $clr-hover-navlist: color('hover');
          font-family: $ff-nav-items;
          font-size: $fs-nav-items;
          font-weight: $fw-nav-items;
-         color: gray;
+         color: $clr-text-navlist;
 
          &:hover {
             color: $clr-hover-navlist;
