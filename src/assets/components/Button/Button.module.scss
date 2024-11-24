@@ -14,17 +14,28 @@ $clr-secondary-bg: color('button-secondary', 'background');
 $clr-secondary-text: color('button-secondary', 'text');
 $clr-secondary-hover: color('button-secondary', 'hover');
 
+$ff-button: 'Kollektif', sans-serif;
+$fw-button: 600;
+
+$fs-button-small: font-size('body', 'small');
+$fs-button-medium: font-size('body', 'medium');
+$fs-button-large: font-size('body', 'large');
+
 .button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+
   padding: 0.8rem 1.6rem;
-  font-family: 'Spectral', sans-serif;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
+  font-family: $ff-button;
+  font-weight: $ff-button;
+  letter-spacing: 0.1rem;
+
+  border-radius: 1px;
   border: none;
   outline: none;
+  
+  cursor: pointer;
   text-align: center;
   transition: all 0.3s ease;
   user-select: none;
@@ -32,17 +43,17 @@ $clr-secondary-hover: color('button-secondary', 'hover');
   // Size variants
   &.small {
     padding: 0.6rem 1.2rem;
-    font-size: 0.875rem;
+    font-size: $fs-button-small;
   }
 
   &.medium {
     padding: 0.8rem 1.6rem;
-    font-size: 1rem;
+    font-size: $fs-button-medium
   }
 
   &.large {
     padding: 1rem 2rem;
-    font-size: 1.125rem;
+    font-size: $fs-button-large;
   }
 
   // Primary variant
@@ -54,15 +65,15 @@ $clr-secondary-hover: color('button-secondary', 'hover');
       background-color: $clr-primary-hover;
     }
 
-    &:focus {
-      outline: 2px solid $focus-color;
-    }
+    // &:focus {
+    //   outline: 2px solid $focus-color;
+    // }
 
-    &:disabled {
-      background-color: $clr-primary-bg;
-      opacity: $disabled-opacity;
-      cursor: not-allowed;
-    }
+    // &:disabled {
+    //   background-color: $clr-primary-bg;
+    //   opacity: $disabled-opacity;
+    //   cursor: not-allowed;
+    // }
   }
 
   // Secondary variant

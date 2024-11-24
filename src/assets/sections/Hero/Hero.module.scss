@@ -1,4 +1,4 @@
-// Navbar.module.scss
+// Hero.module.scss
 @use "./../../styles/abstracts/variables" as *;
 @use "./../../styles/abstracts/functions" as *;
 
@@ -39,7 +39,7 @@ $clr-ctaText: color('hero', 'text');
 
    &__layer1 {
       background-color: #6d7c5f;
-      clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+      clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
       top: 0;
       z-index: 0;
    }
@@ -55,7 +55,7 @@ $clr-ctaText: color('hero', 'text');
       background-image: url('./../../images/green.svg');
       background-size: cover;
       background-position: center;
-      clip-path: polygon(2.5% 0, 97.5% 0, 97.5% 73%, 2.5% 73%);
+      clip-path: polygon(2.5% 1%, 97.5% 1%, 97.5% 73%, 2.5% 73%);
       top: 0;
       z-index: 2;
    }
@@ -75,9 +75,10 @@ $clr-ctaText: color('hero', 'text');
    }
 
    &__content {
-      max-width: 700px;
-      height: 60%;
-      padding-inline: 1rem;
+      max-width: 688px;
+      height: 70%;
+      padding-inline: 3rem;
+      margin-inline: 2rem;
 
       display: flex;
       flex-direction: column;
@@ -86,15 +87,15 @@ $clr-ctaText: color('hero', 'text');
 
       background-color: rgba(255, 255, 255, 0.8); 
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(5px);
       border: 1px solid #414743;
 
       position: absolute;
-      bottom: 5%;
+      bottom: 2%;
    }
 
    &__greeting {
-      height: 70px;
+      height: 80px;
       width: auto;
       margin-bottom: 1rem;
    }
@@ -104,6 +105,8 @@ $clr-ctaText: color('hero', 'text');
       font-size: $fs-heading;
       font-weight: $fw-heading;
       color: $clr-heading;
+      text-align: center;
+      margin-bottom: 0.5rem;
    }
 
    &__subheading {
@@ -111,7 +114,8 @@ $clr-ctaText: color('hero', 'text');
       font-size: $fs-subheading;
       font-weight: $fw-subheading;
       color: $clr-subheading;
-      margin-top: 1rem;
+      text-align: center;
+      margin-top: 1.5rem;
    }
 
    &__description {
@@ -128,6 +132,6 @@ $clr-ctaText: color('hero', 'text');
       font-weight: $fw-ctaText;
       color: $clr-ctaText;
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
    }
 }

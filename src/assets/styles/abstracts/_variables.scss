@@ -46,32 +46,116 @@ $font-weights: (
   black: 900         // Black font weight
 );
 
+// $colors: (
+//   default: (
+//     background: #E9E8E8 // General background color
+//   ),
+//   navbar: (
+//     background: #E9E8E8, // Navbar background color
+//     text: #3B3B3B,       // Navbar text color
+//     hover: lightgray     // Navbar hover color
+//   ),
+//   slogan: (
+//     background: rgb(233, 232, 232), // Slogan background color
+//     text: rgb(79, 91, 69)          // Slogan text color
+//   ),
+//   hero: (
+//     text: #3B3B3B,     // Hero section text color
+//     heading: #3B3B3B   // Hero section heading color
+//   ),
+//   cameras: (
+//     heading: #3B3B3B,  // Camera section heading color
+//     text: #3B3B3B,     // Camera section text color
+//     card-bg: white,    // Camera card background color
+//     card-border: #DADADA, // Camera card border color
+//     card-hover: #F5F5F5  // Camera card hover background
+//   ),
+//   button-primary: (
+//     background: #505C46,  // Primary button background
+//     text: white,          // Primary button text color
+//     hover: #5C6E4F        // Primary button hover background
+//   ),
+//   button-secondary: (
+//     background: #0056B3, // Secondary button background
+//     text: white,         // Secondary button text color
+//     hover: #004C9B       // Secondary button hover background
+//   ),
+//   alerts: (
+//     success: #28A745,    // Success alert background
+//     warning: #FFC107,    // Warning alert background
+//     error: #DC3545,      // Error alert background
+//     info: #17A2B8        // Info alert background
+//   ),
+//   text: (
+//     body: #3B3B3B,       // General body text color
+//     subtitle: #5C5C5C,   // Subtitle text color
+//     placeholder: #A8A8A8 // Placeholder text color
+//   ),
+//   borders: (
+//     light: #E0E0E0,      // Light border color
+//     dark: #B5B5B5        // Dark border color
+//   ),
+//   backgrounds: (
+//     light: #F9F9F9,      // Light background for sections
+//     dark: #3B3B3B        // Dark background for sections
+//   )
+// );
+
 $colors: (
   default: (
-    background: #E9E8E8  // Background color
+    background: #e9e8e8
   ),
   navbar: (
-    background: #E9E8E8,  // Background color
-    text: #3B3B3B,     // Text color
-    hover: lightgray      // Link hover color
+    background: #e9e8e8,
+    text: #3b3b3b,
+    hover: lightgray
   ),
   slogan: (
-    background: rgb(233, 232, 232),  // Background color
-    text: rgb(79, 91, 69)  // Text color
+    background: rgb(233, 232, 232),
+    text: rgb(79, 91, 69)
   ),
   hero: (
-    text: #3B3B3B,     // Text color
-    heading: #3B3B3B   // Heading color
+    text: #3b3b3b,
+    heading: #3b3b3b
+  ),
+  cameras: (
+    heading: #4b5d3e, // Updated for green palette
+    text: #3b3b3b,
+    card-bg: #ffffff,
+    card-border: #dadada,
+    card-hover: #f5f5f5,
+    card-title: #4b5d3e, // Card titles (green accent)
+    card-shadow: rgba(0, 0, 0, 0.1),
+    card-hover-shadow: rgba(0, 0, 0, 0.2)
   ),
   button-primary: (
-    background: #6d7c5f,  // Background color
-    text: white,        // Text color
-    hover: #5c6e4f      // Hover color
+    background: #505c46,
+    text: white,
+    hover: #5c6e4f
   ),
   button-secondary: (
-    background: #0056B3,  // Background color
-    text: white,        // Text color
-    hover: #004C9B      // Hover color
+    background: #0056b3,
+    text: white,
+    hover: #004c9b
+  ),
+  alerts: (
+    success: #28a745,
+    warning: #ffc107,
+    error: #dc3545,
+    info: #17a2b8
+  ),
+  text: (
+    body: #3b3b3b,
+    subtitle: #5c5c5c,
+    placeholder: #a8a8a8
+  ),
+  borders: (
+    light: #e0e0e0,
+    dark: #b5b5b5
+  ),
+  backgrounds: (
+    light: #f9f9f9,
+    dark: #3b3b3b
   )
 );
 

@@ -1,0 +1,120 @@
+@use "./../../styles/abstracts/variables" as *;
+@use "./../../styles/abstracts/functions" as *;
+
+$ff-heading: 'Kollektif', serif;
+$ff-body: 'Roboto', sans-serif;
+
+$fs-heading: 32px;
+$fs-body: 16px;
+$fw-heading: 700;
+$fw-body: 400;
+
+$clr-heading: color('cameras', 'heading');
+$clr-body: color('cameras', 'text');
+$clr-bg: color('cameras', 'background');
+$clr-button: color('button-primary', 'background');
+$clr-button-text: color('button-primary', 'text');
+$clr-button-hover: color('button-primary', 'hover');
+
+.cameras {
+   background-color: $clr-bg;
+   height: calc(100dvh - 5.625rem);
+   overflow: hidden;
+   &__wrapper {
+      max-width: 1078px;
+      margin: 0 auto;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   &__heading {
+      font-family: $ff-heading;
+      font-size: $fs-heading;
+      font-weight: $fw-heading;
+      color: $clr-heading;
+      text-align: center;
+      margin-bottom: 1.5rem;
+   }
+
+   &__description {
+      font-family: $ff-body;
+      font-size: $fs-body;
+      font-weight: $fw-body;
+      color: $clr-body;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+   }
+
+   &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+   }
+
+   &__card {
+      background-color: white;
+      border: 1px solid lighten($clr-body, 30%);
+      border-radius: 8px;
+      padding: 1rem;  // Reduced padding from 1.5rem to 1rem
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+   
+      &:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+   }
+   &__image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+   }
+
+   &__name {
+      font-family: $ff-heading;
+      font-weight: $fw-heading;
+      font-size: 1.25rem;
+      color: $clr-heading;
+      margin-bottom: 0.5rem;
+   }
+
+   &__text {
+      font-family: $ff-body;
+      font-size: $fs-body;
+      font-weight: $fw-body;
+      color: $clr-body;
+      margin-bottom: 1rem;
+   }
+
+   &__price {
+      font-family: $ff-body;
+      font-size: $fs-body;
+      font-weight: 500;
+      color: $clr-heading;
+      margin-bottom: 1.5rem;
+   }
+
+   &__button {
+      display: inline-block;
+      font-family: $ff-body;
+      font-size: $fs-body;
+      font-weight: $fw-body;
+      color: $clr-button-text;
+      background-color: $clr-button;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s;
+      cursor: pointer;
+
+      &:hover {
+         background-color: $clr-button-hover;
+      }
+   }
+}
