@@ -1,19 +1,18 @@
 // Navbar.module.scss
-@use './../../styles/abstracts/variables' as *;
-@use './../../styles/abstracts/functions' as *;
+@use "./../../styles/abstracts/variables" as *;
+@use "./../../styles/abstracts/functions" as *;
 
-$clr-bg-navbar: background-color('navbar', 'primary');
-$ff-nav-items: 'Kollektif', sans-serif; // Heading font
-$fs-nav-items: font-size('body', 'small'); // 14px
-$fw-nav-items: font-weight('semibold');
-$clr-text-navlist: color('navbar', 'text');
-$clr-hover-navlist: color('navbar', 'hover');
-
+$clr-bg-navbar: background-color("navbar", "primary");
+$ff-nav-items: "Kollektif", sans-serif; // Heading font
+$fs-nav-items: font-size("body", "small"); // 14px
+$fw-nav-items: font-weight("semibold");
+$clr-text-navlist: color("navbar", "text");
+$clr-hover-navlist: color("navbar", "hover");
+$clr-nav-first-item: rgb(123, 140, 106);
 
 .navbar {
    height: 5.625rem; // 90px
    background-color: $clr-bg-navbar;
-   
 
    &__wrapper {
       max-width: 1078px;
@@ -36,19 +35,33 @@ $clr-hover-navlist: color('navbar', 'hover');
    &__list {
       display: flex;
       gap: 2rem;
+
+      li:first-child {
+         color: $clr-nav-first-item;
+      }
+      li {
+         position: relative;
+         z-index: 1;
+         &::before {
+            content: attr(data-text);
+            position: absolute;
+            bottom: 7px;
+            right: 15px;
+            color: whitesmoke;
+            z-index: -1;
+         }
+      }
    }
 
    &__item {
-      a {
-         font-family: $ff-nav-items;
-         font-size: $fs-nav-items;
-         font-weight: $fw-nav-items;
-         letter-spacing: 1.28px;
-         color: $clr-text-navlist;
+      font-family: $ff-nav-items;
+      font-size: $fs-nav-items;
+      font-weight: $fw-nav-items;
+      letter-spacing: 1.28px;
+      color: $clr-text-navlist;
 
-         &:hover {
-            color: $clr-hover-navlist;
-         }
+      &:hover {
+         color: $clr-hover-navlist;
       }
    }
 }

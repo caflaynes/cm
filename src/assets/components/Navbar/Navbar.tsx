@@ -16,11 +16,14 @@ const Navbar: React.FC = () => {
                </div>
                <div className={styles.navbar__menu}>
                   <ul className={styles.navbar__list} role="list">
-                     <li className={styles.navbar__item}>
+                     <li className={styles.navbar__item} data-text="HOME">
                         <a href="#">HOME</a>
                      </li>
                      <li className={styles.navbar__item}>
-                        <a href="#">CAMERAS</a>
+                        <a href="#">DIGITAL CAMERAS</a>
+                     </li>
+                     <li className={styles.navbar__item}>
+                        <a href="#">HOW IT WORKS</a>
                      </li>
                      <li className={styles.navbar__item}>
                         <a href="#">PRICING</a>
