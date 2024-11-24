@@ -1,4 +1,4 @@
-@use '../../../main.scss' as *;
+@use '../../../main.scss';
 
 .navbar {
    height: 5rem;
@@ -26,7 +26,7 @@
    &__item {
       a {
          font-family: var(--ff-nav-items);
-         font-size: font-size(body, small);
+         font-size: main.font-size(body, small);
          font-weight: bold;
          color: black;
 
