@@ -22,8 +22,8 @@
       gap: 1rem; // Adds spacing between list items
    }
    &__item {
+      font-family: var(--ff-nav-items);
       a {
-         font-family: var(--ff-nav-items);
          color: black;
          font-weight: bold;
 
