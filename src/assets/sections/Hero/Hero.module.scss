@@ -1,0 +1,65 @@
+// Navbar.module.scss
+@use "./../../styles/abstracts/variables" as *;
+@use "./../../styles/abstracts/functions" as *;
+
+$ff-heading: 'Spectral', sans-serif;
+$fs-heading: font-size('heading', 'h2'); // 48px
+$fw-heading: font-weight('bold');
+$clr-heading: color('hero', 'heading');
+$ff-subheading: 'Spectral', sans-serif;
+$fs-subheading: font-size('heading', 'h4'); // 36px
+$fw-subheading: font-weight('bold');
+$clr-subheading: color('hero', 'heading');
+$ff-description: 'Spectral', sans-serif;
+$fs-description: font-size('body', 'large'); // 18px
+$fw-description: font-weight('medium');
+$clr-description: color('hero', 'text');
+
+
+.hero {
+   height: 100vh;
+   &__wrapper {
+      max-width: 1078px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   &__content {
+      max-width: 700px;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+   }
+   &__greeting {
+      height: 70px;
+      width: auto;
+   }
+   &__heading{
+      font-family: $ff-heading;
+      font-size: $fs-heading;
+      font-weight: $fw-heading;
+      color: $clr-heading;
+   }
+   &__subheading {
+      font-family: $ff-subheading;
+      font-size: $fs-subheading;
+      font-weight: $fw-subheading;
+      color: $clr-subheading;
+   }
+   &__description {
+      font-family: $ff-description;
+      font-size: $fs-description;
+      font-weight: $fw-description;
+      color: $clr-description;
+      text-align: center;
+   }
+}
+
