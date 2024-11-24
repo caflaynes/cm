@@ -13,7 +13,7 @@
  
  // Function to get background color
  @function background-color($map-key, $color-key) {
-  @return map-get(map.get(var.$background-colors, $map-key), $color-key); // Use 'map.get' instead of 'map-get'
+  @return map.get(map.get(var.$background-colors, $map-key), $color-key); // Use 'map.get' instead of 'map-get'
 }
 
 // Function to get color
