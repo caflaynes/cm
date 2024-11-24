@@ -10,4 +10,31 @@
       justify-content: space-between;
       align-items: center;
    }
+   &__brand {
+      img {
+         height: 6rem;
+         width: auto;
+      }
+   }
+
+   &__menu {
+      // Additional menu styles here
+   }
+
+   &__list {
+      display: flex;
+      gap: 1rem; // Adds spacing between list items
+   }
+
+   &__item {
+      a {
+         text-decoration: none;
+         color: black;
+         font-weight: bold;
+
+         &:hover {
+            color: lightgray; // Change color on hover
+         }
+      }
+   }
 }
