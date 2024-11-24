@@ -47,14 +47,33 @@ $font-weights: (
 );
 
 $background-colors: (
-  primary: #E9E8E8,  // Primary background color
-  secondary: #F4F4F4 // Secondary background color
+  default: (
+    primary: #E9E8E8,  // Primary background color
+    secondary: #F4F4F4 // Secondary background color
+  ),
+  navbar: (
+    primary: #007BFF,  // Primary background color
+    secondary: #0056B3 // Secondary background color
+  ),
+  slogan: (
+    primary: #007BFF,  // Primary background color
+    secondary: #0056B3 // Secondary background color
+  )
 );
 
 $colors: (
-  text: #3B3B3B,     // Text color
-  link: #007BFF,      // Link color
-  hover: lightgray      // Link hover color
+  default: (
+    text: #3B3B3B,     // Text color
+    link: #007BFF,      // Link color
+    hover: lightgray      // Link hover color
+  ),
+  navbar: (
+    text: #3B3B3B,     // Text color
+    hover: lightgray      // Link hover color
+  ),
+  slogan: (
+    text: rgb(79, 91, 69)  // Text color
+  )
 );
 
 // ========================

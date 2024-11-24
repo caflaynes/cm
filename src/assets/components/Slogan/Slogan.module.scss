@@ -5,6 +5,7 @@
 $ff-slogan: 'Kollektif', sans-serif; // Heading font
 $fs-slogan: font-size('body', 'xsmall'); // 12px
 $fw-slogan: font-weight('medium');
+$clr-slogan: color('slogan', 'text');
 
 .slogan {
    height: 30px;
@@ -23,5 +24,6 @@ $fw-slogan: font-weight('medium');
       font-family: $ff-slogan;
       font-size: $fs-slogan;
       font-weight: $fw-slogan;
+      color: $clr-slogan;
    }
 }
