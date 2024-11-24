@@ -1,0 +1,7 @@
+@function font-size($category, $size) {
+   @return map-get(map-get($font-sizes, $category), $size);
+}
+
+@function spacing-size($size) {
+   @return map-get($spacing-sizes, $size);
+}

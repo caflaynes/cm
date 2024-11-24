@@ -1,5 +1,7 @@
+@use '../../../main.scss' as *;
+
 .navbar {
-   height: 6rem;
+   height: 5rem;
    background-color: gray;
    &__wrapper {
       max-width: 1078px;
@@ -13,7 +15,7 @@
    }
    &__brand {
       img {
-         height: 5rem;
+         height: 4rem;
          width: auto;
       }
    }
@@ -23,9 +25,10 @@
    }
    &__item {
       a {
-         font-family: var(--ff-nav-items);
-         color: black;
+         font-family: var(--ff-nav-items);\
+         font-size: font-size(body, small);
          font-weight: bold;
+         color: black;
 
          &:hover {
             color: lightgray; // Change color on hover
