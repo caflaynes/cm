@@ -1,4 +1,7 @@
-@use '../../../main.scss';
+// _navbar.scss
+@use './../../styles/abstracts/functions' as func;  // Import functions with an alias
+@use './../../styles/abstracts/mixins' as *;     // Import mixins with an alias
+@use './../../styles/abstracts/variables' as var;   // Import variables with an alias
 
 .navbar {
    height: 5rem;
@@ -21,12 +24,12 @@
    }
    &__list {
       display: flex;
-      gap: 1rem; // Adds spacing between list items
+      gap: func.spacing-size(300); 
    }
    &__item {
       a {
          font-family: var(--ff-nav-items);
-         font-size: main.font-size(body, small);
+         @include font-size('body', 'small');
          font-weight: bold;
          color: black;
 
