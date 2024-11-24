@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
                   </a>
                </div>
                <div className={styles.navbar__menu}>
-                  <ul className={styles.navbar__list}>
+                  <ul className={styles.navbar__list} role="list">
                      <li className={styles.navbar_item}>
                         <a href="#">HOME</a>
                      </li>
