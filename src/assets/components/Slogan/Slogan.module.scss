@@ -4,7 +4,7 @@
 
 $ff-slogan: 'Times New Roman', Times, serif;
 $fs-slogan: font-size('body', 'xsmall'); // 12px
-$fw-slogan: font-weight('medium');
+$fw-slogan: font-weight('semibold');
 $clr-slogan: color('slogan', 'text');
 
 .slogan {
@@ -24,6 +24,7 @@ $clr-slogan: color('slogan', 'text');
       font-family: $ff-slogan;
       font-size: $fs-slogan;
       font-weight: $fw-slogan;
+      letter-spacing: 1.28px;
       color: $clr-slogan;
    }
 }
