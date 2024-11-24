@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
                   <h3 className={styles.hero__subheading}>
                      Ready to capture your shot?
                   </h3>
-                  <p className={styles.hero__callToAction}>
+                  <p className={styles.hero__ctaText}>
                      Click the button below to get started!
                   </p>
                   <button className={styles.hero__ctaButton}>

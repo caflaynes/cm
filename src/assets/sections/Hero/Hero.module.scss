@@ -6,18 +6,24 @@ $ff-heading: 'Spectral', sans-serif;
 $fs-heading: font-size('heading', 'h2'); // 48px
 $fw-heading: font-weight('bold');
 $clr-heading: color('hero', 'heading');
+
 $ff-subheading: 'Spectral', sans-serif;
-$fs-subheading: font-size('heading', 'h4'); // 36px
+$fs-subheading: font-size('heading', 'h4'); // 24px
 $fw-subheading: font-weight('bold');
 $clr-subheading: color('hero', 'heading');
+
 $ff-description: 'Spectral', sans-serif;
 $fs-description: font-size('body', 'large'); // 18px
 $fw-description: font-weight('medium');
 $clr-description: color('hero', 'text');
 
+$ff-ctaText: 'Spectral', sans-serif;
+$fs-ctaText: font-size('body', 'medium'); // 16px
+$fw-ctaText: font-weight('semibold');
+$clr-ctaText: color('hero', 'text');
 
 .hero {
-   height: 100vh;
+   height: calc(100dvh - (5.625rem + 1.875rem));
    &__wrapper {
       max-width: 1078px;
       width: 100%;
@@ -30,7 +36,10 @@ $clr-description: color('hero', 'text');
    }
    &__content {
       max-width: 700px;
+      max-height: 500px;
       height: 100%;
+      margin-inline: auto;
+      padding-inline: 2rem;
 
       display: flex;
       flex-direction: column;
@@ -59,6 +68,13 @@ $clr-description: color('hero', 'text');
       font-size: $fs-description;
       font-weight: $fw-description;
       color: $clr-description;
+      text-align: center;
+   }
+   &__ctaText {
+      font-family: $ff-ctaText;
+      font-size: $fs-ctaText;
+      font-weight: $fw-ctaText;
+      color: $clr-ctaText;
       text-align: center;
    }
 }

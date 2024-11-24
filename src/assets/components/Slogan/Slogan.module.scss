@@ -8,7 +8,7 @@ $fw-slogan: font-weight('medium');
 $clr-slogan: color('slogan', 'text');
 
 .slogan {
-   height: 30px;
+   height: 1.875rem;
    background-color: var(--clr-bg-primary);
    &__wrapper {
       max-width: 1078px;
