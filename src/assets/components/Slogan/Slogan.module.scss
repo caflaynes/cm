@@ -2,7 +2,7 @@
 @use './../../styles/abstracts/variables' as *;
 @use './../../styles/abstracts/functions' as *;
 
-$ff-slogan: 'Kollektif', sans-serif; // Heading font
+$ff-slogan: 'Times New Roman', Times, serif;
 $fs-slogan: font-size('body', 'xsmall'); // 12px
 $fw-slogan: font-weight('medium');
 $clr-slogan: color('slogan', 'text');
