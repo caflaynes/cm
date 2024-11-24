@@ -5,10 +5,8 @@ import { Hero, Cameras } from "./assets/sections";
 function App() {
    return (
       <>
-         <header>
-            <Slogan slogan="COLLECT MEMORIES, NOT THINGS" />
-            <Navbar />
-         </header>
+         <Slogan slogan="COLLECT MEMORIES, NOT THINGS" />
+         <Navbar />
          <main>
             <Hero />
             <Cameras />

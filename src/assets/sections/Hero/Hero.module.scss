@@ -22,47 +22,145 @@ $fs-ctaText: font-size('body', 'medium'); // 16px
 $fw-ctaText: font-weight('semibold');
 $clr-ctaText: color('hero', 'text');
 
+// .hero {
+//    height: calc(100dvh - (5.625rem + 1.875rem));
+//    &__wrapper {
+//       max-width: 1078px;
+//       width: 100%;
+//       height: 100%;
+//       margin: 0 auto;
+
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//    }
+//    &__content {
+//       max-width: 700px;
+//       max-height: 500px;
+//       height: 100%;
+//       margin-inline: auto;
+//       padding-inline: 2rem;
+
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: center;
+//       gap: 1rem;
+//    }
+//    &__greeting {
+//       height: 70px;
+//       width: auto;
+//    }
+//    &__heading{
+//       font-family: $ff-heading;
+//       font-size: $fs-heading;
+//       font-weight: $fw-heading;
+//       color: $clr-heading;
+//    }
+//    &__subheading {
+//       font-family: $ff-subheading;
+//       font-size: $fs-subheading;
+//       font-weight: $fw-subheading;
+//       color: $clr-subheading;
+//    }
+//    &__description {
+//       font-family: $ff-description;
+//       font-size: $fs-description;
+//       font-weight: $fw-description;
+//       color: $clr-description;
+//       text-align: center;
+//    }
+//    &__ctaText {
+//       font-family: $ff-ctaText;
+//       font-size: $fs-ctaText;
+//       font-weight: $fw-ctaText;
+//       color: $clr-ctaText;
+//       text-align: center;
+//    }
+// }
+
+
 .hero {
+   position: relative;  // Needed for absolute positioning of the shapes
    height: calc(100dvh - (5.625rem + 1.875rem));
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;  // Prevent overflow of shapes if they extend outside the section
+
+   // Layer 1 (bottom layer)
+   &__layer1, &__layer2, &__layer3 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+   }
+
+   &__layer1 {
+      background-color: #6d7c5f;  // Change color or use gradients
+      clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+      top: 0;
+      z-index: 0;
+   }
+
+   &__layer2 {
+      background-color: #faf9f8;  // Change color or use gradients
+      clip-path: polygon(1.5% 47%, 98.5% 47%, 98.5% 75%, 1.5% 75%);
+      top: 0;
+      z-index: 1;
+   }
+
+   &__layer3 {
+      background-image: url('./../../images/green.svg');
+      background-size: cover;
+      background-position: center;
+      clip-path: polygon(2.5% 0, 97.5% 0, 97.5% 73%, 2.5% 73%);
+      top: 0;
+      z-index: 2;
+      border-radius: 4rem;
+   }
+
    &__wrapper {
       max-width: 1078px;
       width: 100%;
       height: 100%;
       margin: 0 auto;
-
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;  // Ensure that the wrapper sits on top of the layers
+      z-index: 3;
    }
+
    &__content {
       max-width: 700px;
-      max-height: 500px;
       height: 100%;
-      margin-inline: auto;
       padding-inline: 2rem;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 1rem;
    }
+
    &__greeting {
       height: 70px;
       width: auto;
    }
-   &__heading{
+
+   &__heading {
       font-family: $ff-heading;
       font-size: $fs-heading;
       font-weight: $fw-heading;
       color: $clr-heading;
    }
+
    &__subheading {
       font-family: $ff-subheading;
       font-size: $fs-subheading;
       font-weight: $fw-subheading;
       color: $clr-subheading;
    }
+
    &__description {
       font-family: $ff-description;
       font-size: $fs-description;
@@ -70,6 +168,7 @@ $clr-ctaText: color('hero', 'text');
       color: $clr-description;
       text-align: center;
    }
+
    &__ctaText {
       font-family: $ff-ctaText;
       font-size: $fs-ctaText;
@@ -78,4 +177,3 @@ $clr-ctaText: color('hero', 'text');
       text-align: center;
    }
 }
-
