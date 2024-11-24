@@ -1,10 +1,5 @@
 @use './variables' as var;
 @use 'sass:map';
-
-// Function to get font family
-@function font-family($family-key) {
-   @return map.get(var.$font-families, $family-key); // Use 'map.get' instead of 'map-get'
- }
  
  // Function to get font size
  @function font-size($category, $size-key) {
