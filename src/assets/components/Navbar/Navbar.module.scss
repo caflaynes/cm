@@ -2,12 +2,12 @@
 @use './../../styles/abstracts/variables' as *;
 @use './../../styles/abstracts/functions' as *;
 
-$clr-bg-navbar: background-color('primary');
+$clr-bg-navbar: background-color('navbar', 'primary');
 $ff-nav-items: 'Kollektif', sans-serif; // Heading font
 $fs-nav-items: font-size('body', 'small'); // 14px
 $fw-nav-items: font-weight('semibold');
-$clr-text-navlist: color('text');
-$clr-hover-navlist: color('hover');
+$clr-text-navlist: color('navbar', 'text');
+$clr-hover-navlist: color('navbar', 'hover');
 
 
 .navbar {

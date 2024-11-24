@@ -12,13 +12,13 @@
  }
  
  // Function to get background color
- @function background-color($map-key, $color-key) {
-  @return map.get(map.get(var.$background-colors, $map-key), $color-key); // Use 'map.get' instead of 'map-get'
+ @function background-color($category, $color-key) {
+  @return map.get(map.get(var.$background-colors, $category), $color-key); // Use 'map.get' instead of 'map-get'
 }
 
 // Function to get color
-@function color($map-key, $color-key) {
-  @return map.get(map.get(var.$colors, $map-key), $color-key); // Use 'map.get' instead of 'map-get'
+@function color($category, $color-key) {
+  @return map.get(map.get(var.$colors, $category), $color-key); // Use 'map.get' instead of 'map-get'
 }
  
  // Function to get spacing size
