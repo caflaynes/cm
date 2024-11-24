@@ -11,15 +11,11 @@
    @return map.get(var.$font-weights, $weight-key); // Use 'map.get' instead of 'map-get'
  }
  
- // Function to get background color
- @function background-color($category, $color-key) {
-  @return map.get(map.get(var.$background-colors, $category), $color-key); // Use 'map.get' instead of 'map-get'
-}
-
 // Function to get color
 @function color($category, $color-key) {
-  @return map.get(map.get(var.$colors, $category), $color-key); // Use 'map.get' instead of 'map-get'
+  @return map.get(map.get(var.$colors, $category), $color-key);
 }
+
  
  // Function to get spacing size
  @function spacing-size($size-key) {

@@ -9,7 +9,7 @@ $clr-slogan: color('slogan', 'text');
 
 .slogan {
    height: 1.875rem;
-   background-color: var(--clr-bg-primary);
+   background-color: var(--clr-bg-base);
    &__wrapper {
       max-width: 1078px;
       width: 100%;

@@ -1,0 +1,88 @@
+// Button.module.scss
+@use "./../../styles/abstracts/variables" as *;
+@use "./../../styles/abstracts/functions" as *;
+
+// Focus and disabled state variables
+$focus-color: #4e5a3a;
+$disabled-opacity: 0.6;
+
+// Access colors from the map
+$clr-primary-bg: color('button-primary', 'background');
+$clr-primary-text: color('button-primary', 'text');
+$clr-primary-hover: color('button-primary', 'hover');
+$clr-secondary-bg: color('button-secondary', 'background');
+$clr-secondary-text: color('button-secondary', 'text');
+$clr-secondary-hover: color('button-secondary', 'hover');
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+  font-family: 'Spectral', sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  user-select: none;
+
+  // Size variants
+  &.small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.875rem;
+  }
+
+  &.medium {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
+
+  &.large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  // Primary variant
+  &.primary {
+    background-color: $clr-primary-bg;
+    color: $clr-primary-text;
+
+    &:hover {
+      background-color: $clr-primary-hover;
+    }
+
+    &:focus {
+      outline: 2px solid $focus-color;
+    }
+
+    &:disabled {
+      background-color: $clr-primary-bg;
+      opacity: $disabled-opacity;
+      cursor: not-allowed;
+    }
+  }
+
+  // Secondary variant
+  &.secondary {
+    background-color: $clr-secondary-bg;
+    color: $clr-secondary-text;
+    border: 2px solid $clr-secondary-bg;
+
+    &:hover {
+      background-color: $clr-secondary-hover;
+    }
+
+    &:focus {
+      outline: 2px solid $focus-color;
+    }
+
+    &:disabled {
+      background-color: $clr-secondary-bg;
+      opacity: $disabled-opacity;
+      cursor: not-allowed;
+    }
+  }
+}

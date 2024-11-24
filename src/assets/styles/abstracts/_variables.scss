@@ -46,37 +46,32 @@ $font-weights: (
   black: 900         // Black font weight
 );
 
-$background-colors: (
-  default: (
-    primary: #E9E8E8,  // Primary background color
-    secondary: #F4F4F4 // Secondary background color
-  ),
-  navbar: (
-    primary: #E9E8E8,  // Primary background color
-    secondary: #0056B3 // Secondary background color
-  ),
-  slogan: (
-    primary: #007BFF,  // Primary background color
-    secondary: #0056B3 // Secondary background color
-  )
-);
-
 $colors: (
   default: (
-    text: #3B3B3B,     // Text color
-    link: #007BFF,      // Link color
-    hover: lightgray      // Link hover color
+    background: #E9E8E8  // Background color
   ),
   navbar: (
+    background: #E9E8E8,  // Background color
     text: #3B3B3B,     // Text color
     hover: lightgray      // Link hover color
   ),
   slogan: (
+    background: rgb(233, 232, 232),  // Background color
     text: rgb(79, 91, 69)  // Text color
   ),
   hero: (
     text: #3B3B3B,     // Text color
     heading: #3B3B3B   // Heading color
+  ),
+  button-primary: (
+    background: #6d7c5f,  // Background color
+    text: white,        // Text color
+    hover: #5c6e4f      // Hover color
+  ),
+  button-secondary: (
+    background: #0056B3,  // Background color
+    text: white,        // Text color
+    hover: #004C9B      // Hover color
   )
 );
 

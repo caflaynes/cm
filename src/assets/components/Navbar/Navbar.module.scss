@@ -2,17 +2,17 @@
 @use "./../../styles/abstracts/variables" as *;
 @use "./../../styles/abstracts/functions" as *;
 
-$clr-bg-navbar: background-color("navbar", "primary");
+$clr-navbar-bg: color("navbar", "background");
 $ff-nav-items: "Kollektif", sans-serif; // Heading font
 $fs-nav-items: font-size("body", "small"); // 14px
 $fw-nav-items: font-weight("semibold");
-$clr-text-navlist: color("navbar", "text");
-$clr-hover-navlist: color("navbar", "hover");
+$clr-navlist-text: color("navbar", "text");
+$clr-navlist-hover: color("navbar", "hover");
 $clr-nav-first-item: rgb(123, 140, 106);
 
 .navbar {
    height: 5.625rem; // 90px
-   background-color: $clr-bg-navbar;
+   background-color: $clr-navbar-bg;
 
    position: sticky;
    top: 0;
@@ -20,7 +20,7 @@ $clr-nav-first-item: rgb(123, 140, 106);
    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
    &.sticky {
-      background-color: $clr-bg-navbar;
+      background-color: $clr-navbar-bg;
       box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
    }
 
@@ -68,10 +68,10 @@ $clr-nav-first-item: rgb(123, 140, 106);
       font-size: $fs-nav-items;
       font-weight: $fw-nav-items;
       letter-spacing: 1.28px;
-      color: $clr-text-navlist;
+      color: $clr-navlist-text;
 
       &:hover {
-         color: $clr-hover-navlist;
+         color: $clr-navlist-hover;
       }
    }
 }
