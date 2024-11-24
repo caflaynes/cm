@@ -1,7 +1,4 @@
 // _navbar.scss
-@use './../../styles/abstracts/functions' as func;  // Import functions with an alias
-@use './../../styles/abstracts/mixins' as *;     // Import mixins with an alias
-@use './../../styles/abstracts/variables' as var;   // Import variables with an alias
 
 .navbar {
    height: 5.625rem; // 90px
@@ -24,17 +21,17 @@
    }
    &__list {
       display: flex;
-      gap: func.spacing-size(500); 
+      gap: var(--ss-gap-navlist); 
    }
    &__item {
       a {
          font-family: var(--ff-nav-items);
-         @include font-size('body', 'small');
-         font-weight: bold;
-         color: black;
+         font-size: var(--fs-nav-items); 
+         font-weight: var(--fw-nav-items);
+         color: var(--clr-text-navlist);
 
          &:hover {
-            color: lightgray; // Change color on hover
+            color: var(--clr-hover-navlist); // Change color on hover
          }
       }
    }
