@@ -16,8 +16,8 @@
 html,
 body {
   height: 100%;           // Allow the body to take the full height of the viewport for better layout control
-  -webkit-scroll-behavior: smooth !important;  // Enable smooth scrolling for older Safari versions
-  scroll-behavior: smooth !important;         // Enable smooth scrolling for navigation in modern browsers
+  -webkit-scroll-behavior: smooth;  // Enable smooth scrolling for older Safari versions
+  scroll-behavior: smooth;          // Enable smooth scrolling for navigation in modern browsers
 }
 
 html {
