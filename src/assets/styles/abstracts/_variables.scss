@@ -122,15 +122,15 @@ $colors: (
   ),
   cameras: (
     heading: #383E30, // Updated for green palette
-    text: #3b3b3b,
+    text: #3b3b3b
   ),
   card: (
     bg: #e9e8e8,
     border: #dadada,
     hover: #f5f5f5,
-    heading: #3b3b3b,
-    text: #3b3b3b,
-    shadow: rgba(0, 0, 0, 0.1),
+    heading: rgb(15, 41, 0),
+    text: rgba(0, 0, 0, 1),
+    shadow: rgba(66, 21, 21, 0.1),
     hover-shadow: rgba(0, 0, 0, 0.2)
   ),
   button-primary: (

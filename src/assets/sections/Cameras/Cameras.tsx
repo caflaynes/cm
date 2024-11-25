@@ -1,18 +1,10 @@
 import React from "react";
 import styles from "./Cameras.module.scss";
 
-import lumix from "./../../images/cameras/panasonic_lumix_2.avif";
+import lumix from "./../../images/cameras/panasonic_lumix_1.avif";
 import sony from "./../../images/cameras/panasonic_lumix_3.avif";
 import nikon from "./../../images/cameras/panasonic_lumix_4.avif";
 
-
-// Panasonic Lumix DMC-SZ10
-// SAMSUNG S630
-// SAMSUNG ES90
-// SAMSUNG ES28
-// SONY S700
-// NIKON COOLPIX L32
-// NIKON COOLPIX S2600
 const cameraList = [
    {
       id: 1,
@@ -76,6 +68,8 @@ const Cameras: React.FC = () => {
    return (
       <>
          <section className={styles.cameras} id="cameras">
+            <div className={styles.cameras__layer1}></div>
+            <div className={styles.cameras__layer2}></div>
             <div className={styles.cameras__wrapper}>
                <h2 className={styles.cameras__heading}>Digital Cameras</h2>
                <p className={styles.cameras__description}>
@@ -85,11 +79,13 @@ const Cameras: React.FC = () => {
                <div className={styles.cameras__grid}>
                   {cameraList.map((camera) => (
                      <div key={camera.id} className={styles.cameras__card}>
-                        <img
-                           className={styles.cameras__image}
-                           src={camera.image}
-                           alt={`Image of ${camera.name}`}
-                        />
+                        <div className={styles.cameras__imageContainer}>
+                           <img
+                              className={styles.cameras__image}
+                              src={camera.image}
+                              alt={`Image of ${camera.name}`}
+                           />
+                        </div>
                         <div className={styles.cameras__content}>
                            <h3 className={styles.cameras__name}>
                               {camera.name}
