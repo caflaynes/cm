@@ -7,7 +7,7 @@ import hello from "./../../images/hello.svg";
 
 const Hero: React.FC = () => {
    const handleScroll = () => {
-      const cameraSection = document.getElementById("camera-section");
+      const cameraSection = document.getElementById("cameras");
       if (cameraSection) {
          cameraSection.scrollIntoView({ behavior: "smooth" });
       }

@@ -16,14 +16,14 @@
 html,
 body {
   height: 100%;           // Allow the body to take the full height of the viewport for better layout control
+  -webkit-scroll-behavior: smooth;  // Enable smooth scrolling for older Safari versions
+  scroll-behavior: smooth;          // Enable smooth scrolling for navigation in modern browsers
 }
 
 html {
   -moz-text-size-adjust: none;      // Disable text size adjustment in Firefox
   -webkit-text-size-adjust: none;   // Disable text size adjustment in WebKit browsers (Safari)
   text-size-adjust: none;           // Disable text size adjustment in all browsers (to maintain consistency)
-  -webkit-scroll-behavior: smooth;  // Enable smooth scrolling for older Safari versions
-  scroll-behavior: smooth;          // Enable smooth scrolling for navigation in modern browsers
 }
 
 body {
