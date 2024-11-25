@@ -103,7 +103,9 @@ $font-weights: (
 
 $colors: (
   default: (
-    background: #e9e8e8
+    background: #e9e8e8,
+    primary: #6d7c5f,
+    secondary: #505C46,
   ),
   navbar: (
     background: #e9e8e8,
@@ -119,14 +121,17 @@ $colors: (
     heading: #3b3b3b
   ),
   cameras: (
-    heading: #4b5d3e, // Updated for green palette
+    heading: #383E30, // Updated for green palette
     text: #3b3b3b,
-    card-bg: #ffffff,
-    card-border: #dadada,
-    card-hover: #f5f5f5,
-    card-title: #4b5d3e, // Card titles (green accent)
-    card-shadow: rgba(0, 0, 0, 0.1),
-    card-hover-shadow: rgba(0, 0, 0, 0.2)
+  ),
+  card: (
+    bg: #e9e8e8,
+    border: #dadada,
+    hover: #f5f5f5,
+    heading: #3b3b3b,
+    text: #3b3b3b,
+    shadow: rgba(0, 0, 0, 0.1),
+    hover-shadow: rgba(0, 0, 0, 0.2)
   ),
   button-primary: (
     background: #505c46,
@@ -177,5 +182,5 @@ $spacing-sizes: (
 :root {
    // Default Settings
    --fs-base: 16px;
-   --clr-bg-base: #E9E8E8;
+   --clr-bg-base: #e9e8e8;
 }

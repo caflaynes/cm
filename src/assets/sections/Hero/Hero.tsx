@@ -43,7 +43,11 @@ const Hero: React.FC = () => {
                   <p className={styles.hero__ctaText}>
                      Click the button below to get started!
                   </p>
-                  <Button onClick={handleScroll} variant="primary" size="medium">
+                  <Button
+                     onClick={handleScroll}
+                     variant="primary"
+                     size="medium"
+                  >
                      View Cameras
                   </Button>
                </div>

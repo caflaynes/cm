@@ -28,7 +28,6 @@ $clr-ctaText: color('hero', 'text');
    display: flex;
    justify-content: center;
    align-items: center;
-   // overflow: hidden;  // Prevent overflow of shapes if they extend outside the section
 
    // Layer 1 (bottom layer)
    &__layer1, &__layer2, &__layer3 {
@@ -38,7 +37,7 @@ $clr-ctaText: color('hero', 'text');
    }
 
    &__layer1 {
-      background-color: #6d7c5f;
+      background-color: color('default', 'secondary');
       clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
       top: 0;
       z-index: 0;
