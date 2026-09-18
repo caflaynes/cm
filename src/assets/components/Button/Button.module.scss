@@ -1,46 +1,44 @@
-// Button.module.scss
 @use "./../../styles/abstracts/variables" as *;
 @use "./../../styles/abstracts/functions" as *;
 
-// Focus and disabled state variables
 $focus-color: #4e5a3a;
 $disabled-opacity: 0.6;
 
-// Access colors from the map
-$clr-primary-bg: color('button-primary', 'background');
-$clr-primary-text: color('button-primary', 'text');
-$clr-primary-hover: color('button-primary', 'hover');
-$clr-secondary-bg: color('button-secondary', 'background');
-$clr-secondary-text: color('button-secondary', 'text');
-$clr-secondary-hover: color('button-secondary', 'hover');
+$clr-primary-bg: color("button-primary", "background");
+$clr-primary-text: color("button-primary", "text");
+$clr-primary-hover: color("button-primary", "hover");
+$clr-secondary-bg: color("button-secondary", "background");
+$clr-secondary-text: color("button-secondary", "text");
+$clr-secondary-hover: color("button-secondary", "hover");
 
-$ff-button: 'Kollektif', sans-serif;
+$ff-button: "Kollektif", sans-serif;
 $fw-button: 600;
 
-$fs-button-small: font-size('body', 'small');
-$fs-button-medium: font-size('body', 'medium');
-$fs-button-large: font-size('body', 'large');
+$fs-button-small: font-size("body", "small");
+$fs-button-medium: font-size("body", "medium");
+$fs-button-large: font-size("body", "large");
 
 .button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
   padding: 0.8rem 1.6rem;
   font-family: $ff-button;
-  font-weight: $ff-button;
+  font-weight: $fw-button;
   letter-spacing: 0.1rem;
-
   border-radius: 1px;
   border: none;
   outline: none;
-  
   cursor: pointer;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease;
   user-select: none;
 
-  // Size variants
+  &:focus-visible {
+    outline: 2px solid $focus-color;
+    outline-offset: 3px;
+  }
+
   &.small {
     padding: 0.6rem 1.2rem;
     font-size: $fs-button-small;
@@ -48,7 +46,7 @@ $fs-button-large: font-size('body', 'large');
 
   &.medium {
     padding: 0.8rem 1.6rem;
-    font-size: $fs-button-medium
+    font-size: $fs-button-medium;
   }
 
   &.large {
@@ -56,7 +54,6 @@ $fs-button-large: font-size('body', 'large');
     font-size: $fs-button-large;
   }
 
-  // Primary variant
   &.primary {
     background-color: $clr-primary-bg;
     color: $clr-primary-text;
@@ -64,19 +61,8 @@ $fs-button-large: font-size('body', 'large');
     &:hover {
       background-color: $clr-primary-hover;
     }
-
-    // &:focus {
-    //   outline: 2px solid $focus-color;
-    // }
-
-    // &:disabled {
-    //   background-color: $clr-primary-bg;
-    //   opacity: $disabled-opacity;
-    //   cursor: not-allowed;
-    // }
   }
 
-  // Secondary variant
   &.secondary {
     background-color: $clr-secondary-bg;
     color: $clr-secondary-text;
@@ -84,10 +70,6 @@ $fs-button-large: font-size('body', 'large');
 
     &:hover {
       background-color: $clr-secondary-hover;
-    }
-
-    &:focus {
-      outline: 2px solid $focus-color;
     }
 
     &:disabled {

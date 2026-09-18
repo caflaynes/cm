@@ -1,136 +1,148 @@
-// Hero.module.scss
 @use "./../../styles/abstracts/variables" as *;
 @use "./../../styles/abstracts/functions" as *;
 
-$ff-heading: 'Spectral', sans-serif;
-$fs-heading: font-size('heading', 'h5'); // 48px
-$fw-heading: font-weight('bold');
-$clr-heading: color('hero', 'heading');
+$ff-heading: "Spectral", serif;
+$fw-heading: font-weight("bold");
+$clr-heading: color("hero", "heading");
 
-$ff-subheading: 'Spectral', sans-serif;
-$fs-subheading: font-size('heading', 'h6'); // 24px
-$fw-subheading: font-weight('bold');
-$clr-subheading: color('hero', 'heading');
-
-$ff-description: 'Spectral', sans-serif;
-$fs-description: font-size('body', 'small'); // 18px
-$fw-description: font-weight('medium');
-$clr-description: color('hero', 'text');
-
-$ff-ctaText: 'Spectral', sans-serif;
-$fs-ctaText: font-size('body', 'xsmall'); // 16px
-$fw-ctaText: font-weight('semibold');
-$clr-ctaText: color('hero', 'text');
+$ff-description: "Spectral", sans-serif;
+$fw-description: font-weight("medium");
+$clr-description: color("hero", "text");
 
 .hero {
-   position: relative;  // Needed for absolute positioning of the shapes
-   height: calc(100dvh - (5.625rem + 1.875rem));
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-   // Layer 1 (bottom layer)
-   &__layer1, &__layer2, &__layer3 {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-   }
-
-   &__layer1 {
-      background-color: color('default', 'secondary');
-      clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-      top: 0;
-      z-index: 0;
-   }
-
-   &__layer2 {
-      background-color: #faf9f8;
-      clip-path: polygon(1.5% 47%, 98.5% 47%, 98.5% 75%, 1.5% 75%);
-      top: 0;
-      z-index: 1;
-   }
-
-   &__layer3 {
-      background-image: url('./../../images/green.svg');
-      background-size: cover;
-      background-position: center;
-      clip-path: polygon(2.5% 1%, 97.5% 1%, 97.5% 73%, 2.5% 73%);
-      top: 0;
-      z-index: 2;
-   }
+   position: relative;
+   overflow: hidden;
+   padding: clamp(1rem, 2.5vw, 1.75rem) $layout-gutter
+      clamp(3rem, 7vw, 5rem);
+   background: linear-gradient(
+      to bottom,
+      var(--clr-bg-base) 0 63%,
+      color("default", "secondary") 63% 100%
+   );
 
    &__wrapper {
-      max-width: 1078px;
+      max-width: $layout-max-width;
       width: 100%;
-      height: 100%;
       margin: 0 auto;
-
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+   }
 
-      position: relative;  // Ensure that the wrapper sits on top of the layers
-      z-index: 3;
+   &__media {
+      width: 100%;
+      height: clamp(26rem, 52vw, 38rem);
+      background-image: url("./../../images/green.svg");
+      background-size: cover;
+      background-position: center;
+      border: 0.5rem solid #faf9f8;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
    }
 
    &__content {
-      max-width: 688px;
-      height: 400px;
-      padding-inline: 3rem;
-      margin-inline: 2rem;
-
+      width: min(43rem, calc(100% - 4rem));
+      margin-top: -8rem;
+      padding: clamp(2rem, 4vw, 3rem);
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(65, 71, 67, 0.85);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6px);
 
-      background-color: rgba(255, 255, 255, 0.8); 
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px);
-      border: 1px solid #414743;
-
-      position: absolute;
-      bottom: 2%;
+      button {
+         min-width: 10.5rem;
+      }
    }
 
    &__greeting {
-      height: 80px;
+      height: clamp(3.5rem, 6vw, 5rem);
       width: auto;
       margin-bottom: 1rem;
    }
 
    &__heading {
+      margin-bottom: 1rem;
       font-family: $ff-heading;
-      font-size: $fs-heading;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
       font-weight: $fw-heading;
+      line-height: 1.15;
       color: $clr-heading;
       text-align: center;
-      margin-bottom: 0.5rem;
-   }
-
-   &__subheading {
-      font-family: $ff-subheading;
-      font-size: $fs-subheading;
-      font-weight: $fw-subheading;
-      color: $clr-subheading;
-      text-align: center;
-      margin-top: 1.5rem;
    }
 
    &__description {
+      max-width: 36rem;
+      margin-bottom: 1.75rem;
       font-family: $ff-description;
-      font-size: $fs-description;
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
       font-weight: $fw-description;
+      line-height: 1.6;
       color: $clr-description;
       text-align: center;
    }
+}
 
-   &__ctaText {
-      font-family: $ff-ctaText;
-      font-size: $fs-ctaText;
-      font-weight: $fw-ctaText;
-      color: $clr-ctaText;
-      text-align: center;
-      margin-bottom: 1.5rem;
+@media (max-width: $breakpoint-nav) {
+   .hero {
+      padding-top: 1rem;
+
+      &__media {
+         height: clamp(22rem, 60vw, 28rem);
+      }
+
+      &__content {
+         width: min(40rem, calc(100% - 2rem));
+         margin-top: -5rem;
+         padding: 2rem;
+      }
+   }
+}
+
+@media (max-width: $breakpoint-mobile) {
+   .hero {
+      padding: 0.75rem 0 2.5rem;
+      background: var(--clr-bg-base);
+
+      &__media {
+         height: clamp(15rem, 68vw, 20rem);
+         border: 0;
+         box-shadow: none;
+      }
+
+      &__content {
+         width: calc(100% - 2rem);
+         margin-top: -2rem;
+         padding: 2rem 1.25rem 1.75rem;
+         background-color: rgba(255, 255, 255, 0.94);
+
+         button {
+            width: 100%;
+            max-width: 14rem;
+         }
+      }
+
+      &__greeting {
+         height: 3.25rem;
+         margin-bottom: 0.75rem;
+      }
+
+      &__heading {
+         font-size: clamp(1.6rem, 7vw, 2rem);
+      }
+
+      &__description {
+         font-size: 0.95rem;
+         line-height: 1.55;
+      }
+   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .hero {
+      scroll-behavior: auto;
    }
 }
