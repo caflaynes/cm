@@ -25,8 +25,8 @@ html {
 body {
   min-width: 320px;
   font-size: var(--fs-base);
-  color: #35402d;
-  background: #d8ceb4;
+  color: #31382a;
+  background: #d9ccb8;
   overflow-x: hidden;
 }
 
@@ -74,19 +74,12 @@ dd {
 
 section[id],
 footer[id] {
-  scroll-margin-top: calc(#{$navbar-height} + 1rem);
+  scroll-margin-top: 1rem;
 }
 
 ::selection {
-  color: #eee4cc;
-  background: #46543b;
-}
-
-@media (max-width: $breakpoint-nav) {
-  section[id],
-  footer[id] {
-    scroll-margin-top: calc(#{$navbar-height-mobile} + 0.75rem);
-  }
+  color: #eee4cf;
+  background: #3e4937;
 }
 
 @media (prefers-reduced-motion: reduce) {

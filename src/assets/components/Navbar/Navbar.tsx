@@ -1,34 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import logo from "./../../images/logo.svg";
 
 const Navbar: React.FC = () => {
-   const [isSticky, setIsSticky] = useState(false);
    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-   useEffect(() => {
-      const handleScroll = () => setIsSticky(window.scrollY > 20);
-
-      handleScroll();
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      return () => window.removeEventListener("scroll", handleScroll);
-   }, []);
-
-   useEffect(() => {
-      if (!isMenuOpen) return;
-
-      const closeOnEscape = (event: KeyboardEvent) => {
-         if (event.key === "Escape") setIsMenuOpen(false);
-      };
-
-      window.addEventListener("keydown", closeOnEscape);
-      return () => window.removeEventListener("keydown", closeOnEscape);
-   }, [isMenuOpen]);
-
    const closeMenu = () => setIsMenuOpen(false);
 
    return (
-      <header className={`${styles.navbar} ${isSticky ? styles.sticky : ""}`}>
+      <header className={styles.navbar}>
          <div className={styles.navbar__canvas}>
             <a
                className={styles.navbar__brand}

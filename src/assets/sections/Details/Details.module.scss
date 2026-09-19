@@ -1,34 +1,65 @@
 @use "./../../styles/abstracts/variables" as *;
 
 .details {
-   color: #35402d;
+   color: #31382a;
    background:
-      linear-gradient(rgba(215, 205, 180, 0.97), rgba(215, 205, 180, 0.97)),
-      repeating-linear-gradient(0deg, transparent 0 6px, rgba(54, 61, 43, 0.025) 6px 7px);
+      linear-gradient(rgba(218, 205, 183, 0.97), rgba(218, 205, 183, 0.97)),
+      repeating-linear-gradient(0deg, transparent 0 6px, rgba(49, 56, 42, 0.025) 6px 7px);
 
    &__benefits {
-      max-width: 72rem;
+      position: relative;
+      max-width: 64rem;
+      min-height: 17.5rem;
       margin: 0 auto;
-      padding: clamp(2.2rem, 5vw, 4rem) $layout-gutter clamp(3rem, 5vw, 4.6rem);
+      padding: 3.3rem 8.7rem 2.2rem 20.3rem;
 
       > h2 {
-         width: min(31rem, 100%);
-         margin-left: 28%;
+         width: 100%;
          padding-bottom: 0.55rem;
          font-family: "Kollektif", sans-serif;
-         font-size: 0.72rem;
+         font-size: 0.69rem;
          font-weight: 700;
-         letter-spacing: 0.3em;
-         border-bottom: 1px solid rgba(55, 63, 46, 0.36);
+         letter-spacing: 0.31em;
+         border-bottom: 1px solid rgba(49, 56, 42, 0.32);
+      }
+
+      &::before {
+         content: "More\A Adventures\A Here! ♡";
+         white-space: pre;
+         position: absolute;
+         left: 11rem;
+         top: 8.1rem;
+         padding: 1rem 1.2rem;
+         font-family: "Segoe Print", "Bradley Hand", cursive;
+         font-size: 0.78rem;
+         line-height: 1.2;
+         background: #ddd2b8;
+         transform: rotate(-8deg);
+      }
+
+      &::after {
+         content: "It’s not just\A a camera.\A\A It’s a different\A way of seeing\A the world.\A ♡";
+         white-space: pre;
+         position: absolute;
+         right: 0.3rem;
+         top: 4.3rem;
+         width: 13.2rem;
+         padding: 1.3rem 1rem;
+         font-family: "Segoe Print", "Bradley Hand", cursive;
+         font-size: 0.78rem;
+         line-height: 1.2;
+         text-align: center;
+         background: #ded3b8;
+         transform: rotate(-3deg);
+         box-shadow: -0.55rem 0.45rem 0 #40503b;
       }
    }
 
    &__benefitGrid {
-      width: min(40rem, 70%);
-      margin: 2rem 0 0 auto;
+      margin-top: 1.9rem;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(1.2rem, 4vw, 2.8rem);
+      gap: 1.9rem;
 
       article {
          position: relative;
@@ -36,168 +67,164 @@
          & + article::before {
             content: "";
             position: absolute;
-            left: calc(-1 * clamp(0.6rem, 2vw, 1.4rem));
-            top: 1.2rem;
+            left: -0.95rem;
+            top: 0.6rem;
             bottom: 0.2rem;
             width: 1px;
-            background: rgba(55, 63, 46, 0.14);
+            background: rgba(49, 56, 42, 0.13);
          }
       }
 
       svg {
-         width: 2.1rem;
-         height: 2.1rem;
+         width: 2rem;
+         height: 2rem;
          fill: none;
-         stroke: #35402d;
+         stroke: #31382a;
          stroke-width: 2;
          stroke-linecap: round;
          stroke-linejoin: round;
       }
 
       h3 {
-         margin-top: 0.65rem;
+         margin-top: 0.55rem;
          font-family: "Spectral", serif;
-         font-size: 0.96rem;
+         font-size: 0.88rem;
          font-weight: 700;
       }
 
       p {
-         margin-top: 0.35rem;
+         margin-top: 0.3rem;
          font-family: "Spectral", serif;
-         font-size: 0.8rem;
-         line-height: 1.4;
+         font-size: 0.74rem;
+         line-height: 1.32;
       }
    }
 
    &__story {
       position: relative;
-      min-height: 27rem;
+      min-height: 15.7rem;
       overflow: hidden;
-      background:
-         linear-gradient(rgba(60, 74, 50, 0.33), rgba(57, 69, 47, 0.42)),
-         #879176;
+      background: #75816a;
 
       &::before {
          content: "";
          position: absolute;
-         inset: auto 0 0;
-         height: 47%;
+         inset: 0;
+         z-index: 1;
          background:
-            linear-gradient(160deg, transparent 0 11%, rgba(60, 72, 49, 0.78) 12% 28%, transparent 29%),
-            linear-gradient(200deg, transparent 0 10%, rgba(48, 59, 42, 0.86) 11% 35%, transparent 36%),
-            linear-gradient(150deg, transparent 0 15%, rgba(75, 85, 58, 0.66) 16% 43%, transparent 44%);
-         opacity: 0.9;
+            linear-gradient(160deg, transparent 0 10%, rgba(58, 70, 49, 0.82) 11% 35%, transparent 36%),
+            linear-gradient(205deg, transparent 0 9%, rgba(42, 54, 39, 0.86) 10% 39%, transparent 40%),
+            linear-gradient(148deg, transparent 0 13%, rgba(84, 92, 62, 0.65) 14% 46%, transparent 47%);
+         opacity: 0.95;
       }
    }
 
    &__landscape {
       position: absolute;
       inset: 0;
+      z-index: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: sepia(0.28) saturate(0.58) contrast(0.9) brightness(0.72);
+      filter: sepia(0.3) saturate(0.5) contrast(0.88) brightness(0.65);
       mix-blend-mode: multiply;
-      opacity: 0.72;
+      opacity: 0.78;
    }
 
    &__filmstrip {
       position: absolute;
-      z-index: 3;
-      left: -1.2rem;
-      bottom: 1.5rem;
-      width: 7.7rem;
-      height: 22rem;
-      padding: 0.8rem 0.6rem;
+      z-index: 4;
+      left: -0.6rem;
+      bottom: -1rem;
+      width: 6.8rem;
+      height: 18.3rem;
+      padding: 0.75rem 0.5rem;
       display: grid;
       grid-template-rows: repeat(3, 1fr);
-      gap: 0.38rem;
-      background: #24251d;
-      border: 0.26rem solid #24251d;
-      box-shadow: 0 10px 18px rgba(29, 27, 21, 0.22);
+      gap: 0.3rem;
+      background: #202119;
+      border: 0.25rem solid #202119;
       transform: rotate(-8deg);
 
       div {
          overflow: hidden;
-         border: 0.18rem solid #24251d;
-         background: #d7cdb5;
+         border: 0.16rem solid #202119;
 
          img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: sepia(0.16) saturate(0.75);
+            filter: sepia(0.18) saturate(0.7);
          }
       }
    }
 
    &__adventureNote {
       position: absolute;
-      z-index: 4;
-      left: 8.4rem;
-      top: 2rem;
-      padding: 1.4rem 1.6rem;
+      z-index: 5;
+      left: 8.7rem;
+      top: 1.8rem;
+      padding: 1rem 1.15rem;
       font-family: "Segoe Print", "Bradley Hand", cursive;
-      font-size: 0.9rem;
-      line-height: 1.2;
-      background: rgba(222, 211, 183, 0.92);
+      font-size: 0.75rem;
+      line-height: 1.15;
+      background: #dcd0b5;
       transform: rotate(-6deg);
-      clip-path: polygon(3% 7%, 97% 0, 100% 92%, 5% 100%, 0 14%);
    }
 
    &__quote {
       position: absolute;
-      z-index: 4;
-      left: 13%;
-      bottom: 2rem;
-      padding: 1rem 1.4rem;
+      z-index: 5;
+      left: 14%;
+      bottom: 1.6rem;
+      padding: 0.8rem 1.25rem;
       font-family: "Spectral", serif;
-      font-size: 0.95rem;
-      line-height: 1.35;
+      font-size: 0.86rem;
+      line-height: 1.32;
       text-align: center;
-      background: rgba(225, 215, 187, 0.9);
+      background: #d9cdb4;
       transform: rotate(2deg);
    }
 
    &__seeDavao {
       position: absolute;
-      z-index: 4;
-      right: 12%;
-      bottom: 2.1rem;
-      padding: 1.1rem 1.5rem;
+      z-index: 5;
+      right: 14%;
+      bottom: 1.4rem;
+      padding: 0.8rem 1.1rem;
       font-family: "Segoe Print", "Bradley Hand", cursive;
-      font-size: 1rem;
-      line-height: 1.1;
+      font-size: 0.83rem;
+      line-height: 1.05;
       text-align: center;
-      background: rgba(227, 217, 189, 0.92);
-      transform: rotate(-3deg);
+      background: #ddd1b7;
+      transform: rotate(-4deg);
 
       span {
-         font-size: 1.35rem;
+         font-size: 1.2rem;
       }
    }
 
    &__postmark {
       position: absolute;
-      z-index: 5;
-      right: 5%;
-      bottom: 1.7rem;
-      width: 6rem;
-      height: 6rem;
-      border: 2px solid #34412f;
+      z-index: 6;
+      right: 5.2%;
+      bottom: 0.9rem;
+      width: 5.2rem;
+      height: 5.2rem;
+      border: 2px solid #31382a;
       border-radius: 50%;
       display: grid;
       place-items: center;
       font-family: "Kollektif", sans-serif;
-      font-size: 0.55rem;
+      font-size: 0.48rem;
       font-weight: 700;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.1em;
       text-align: center;
       transform: rotate(10deg);
 
       span {
          display: block;
-         font-size: 0.46rem;
+         font-size: 0.42rem;
       }
 
       &::before,
@@ -207,7 +234,7 @@
          left: 14%;
          right: 14%;
          height: 1px;
-         background: #34412f;
+         background: #31382a;
       }
 
       &::before { top: 33%; }
@@ -215,31 +242,31 @@
    }
 
    &__footer {
-      min-height: 5.5rem;
-      padding: 0.8rem $layout-gutter;
+      min-height: 5.2rem;
+      padding: 0.7rem max($layout-gutter, calc((100vw - 64rem) / 2));
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 1.5rem;
-      background: #e7ddc4;
-      border-top: 1px solid rgba(55, 63, 46, 0.18);
+      background: #e5dac3;
+      border-top: 1px solid rgba(49, 56, 42, 0.14);
    }
 
    &__footerBrand {
       display: flex;
       align-items: center;
-      gap: 0.55rem;
+      gap: 0.5rem;
 
       img {
-         width: 5.9rem;
+         width: 6.1rem;
          height: auto;
       }
 
       span {
          font-family: "Kollektif", sans-serif;
-         font-size: 0.65rem;
+         font-size: 0.61rem;
          font-weight: 700;
-         letter-spacing: 0.13em;
+         letter-spacing: 0.14em;
       }
    }
 
@@ -249,10 +276,10 @@
 
       a {
          font-family: "Kollektif", sans-serif;
-         font-size: 0.52rem;
+         font-size: 0.49rem;
          font-weight: 700;
          letter-spacing: 0.14em;
-         color: #35402d;
+         color: #31382a;
       }
    }
 
@@ -263,32 +290,36 @@
       gap: 0.65rem;
 
       > span {
-         font-family: serif;
-         font-size: 1.15rem;
+         font-size: 1.05rem;
       }
 
       i {
          width: 1px;
-         height: 2rem;
-         background: rgba(55, 63, 46, 0.35);
+         height: 1.8rem;
+         background: rgba(49, 56, 42, 0.32);
       }
 
       p {
          font-family: "Segoe Print", "Bradley Hand", cursive;
-         font-size: 0.88rem;
+         font-size: 0.78rem;
          white-space: nowrap;
       }
    }
 }
 
-@media (max-width: 52rem) {
+@media (max-width: 56.25rem) {
    .details {
-      &__benefits > h2 {
-         margin-left: 0;
+      &__benefits {
+         padding: 2.8rem $layout-gutter 3rem;
+
+         &::before,
+         &::after {
+            display: none;
+         }
       }
 
       &__benefitGrid {
-         width: 100%;
+         max-width: 42rem;
       }
 
       &__footer {
@@ -303,62 +334,57 @@
    }
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media (max-width: 40rem) {
    .details {
       &__benefitGrid {
          grid-template-columns: 1fr;
-         gap: 1.3rem;
+         gap: 1rem;
 
          article + article::before {
             display: none;
          }
 
          article {
-            padding-bottom: 1.1rem;
-            border-bottom: 1px solid rgba(55, 63, 46, 0.13);
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(49, 56, 42, 0.12);
          }
       }
 
       &__story {
-         min-height: 31rem;
+         min-height: 27rem;
       }
 
       &__filmstrip {
-         width: 5.5rem;
-         height: 17rem;
+         width: 5rem;
+         height: 15.5rem;
       }
 
       &__adventureNote {
-         left: 4.3rem;
-         top: 1.4rem;
-         padding: 1rem;
-         font-size: 0.72rem;
+         left: 4rem;
+         top: 1.2rem;
+         font-size: 0.67rem;
       }
 
       &__quote {
-         left: 24%;
-         bottom: 2.2rem;
-         font-size: 0.78rem;
+         left: 23%;
+         bottom: 1.5rem;
+         font-size: 0.74rem;
       }
 
       &__seeDavao {
-         right: 4%;
-         bottom: 8rem;
-         font-size: 0.8rem;
+         right: 3%;
+         bottom: 7.2rem;
+         font-size: 0.72rem;
       }
 
       &__postmark {
-         right: 6%;
-         bottom: 1.4rem;
-         width: 5rem;
-         height: 5rem;
+         right: 5%;
+         bottom: 1rem;
+         width: 4.7rem;
+         height: 4.7rem;
       }
 
-      &__footer nav {
-         flex-wrap: wrap;
-         justify-content: center;
-      }
-
+      &__footer nav,
       &__social {
          flex-wrap: wrap;
          justify-content: center;
