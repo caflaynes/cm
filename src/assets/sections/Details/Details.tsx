@@ -2,11 +2,6 @@ import React from "react";
 import styles from "./Details.module.scss";
 import logo from "./../../images/logo.svg";
 
-import filmOne from "./../../images/placeholders/Change Your Perspective.jpg";
-import filmTwo from "./../../images/placeholders/Green vibes.jpg";
-import filmThree from "./../../images/placeholders/Jasmin.jpg";
-import landscape from "./../../images/placeholders/ethereal shoot.jpg";
-
 const CameraIcon = () => (
    <svg viewBox="0 0 48 48" aria-hidden="true">
       <path d="M10 15h8l3-5h7l3 5h7a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V19a4 4 0 0 1 4-4Z" />
@@ -26,26 +21,20 @@ const HeartIcon = () => (
    </svg>
 );
 
-const Botanical = ({ className }: { className: string }) => (
-   <svg className={className} viewBox="0 0 150 320" aria-hidden="true">
-      <path d="M76 312C72 255 75 204 86 158C96 111 112 69 132 17" />
-      <ellipse cx="89" cy="247" rx="29" ry="13" transform="rotate(-35 89 247)" />
-      <ellipse cx="59" cy="203" rx="31" ry="14" transform="rotate(34 59 203)" />
-      <ellipse cx="101" cy="157" rx="30" ry="13" transform="rotate(-39 101 157)" />
-      <ellipse cx="70" cy="111" rx="27" ry="12" transform="rotate(32 70 111)" />
-      <ellipse cx="119" cy="67" rx="26" ry="11" transform="rotate(-43 119 67)" />
-   </svg>
+const FilmStripPlaceholder = ({ className, slot }: { className: string; slot: string }) => (
+   <div className={className} data-media-slot={slot} aria-hidden="true">
+      <div /><div /><div />
+   </div>
 );
 
 const Details: React.FC = () => {
    return (
       <section className={styles.details}>
          <div id="how-it-works" className={styles.details__benefits}>
-            <div className={styles.details__leftFilmstrip} aria-hidden="true">
-               <div><img src={filmOne} alt="" /></div>
-               <div><img src={filmTwo} alt="" /></div>
-               <div><img src={filmThree} alt="" /></div>
-            </div>
+            <FilmStripPlaceholder
+               className={styles.details__leftFilmstrip}
+               slot="benefits-film-strip"
+            />
 
             <aside className={styles.details__leftNote}>
                More<br />
@@ -53,7 +42,7 @@ const Details: React.FC = () => {
                Here! ♡
             </aside>
 
-            <Botanical className={`${styles.details__botanical} ${styles.details__botanicalRight}`} />
+            <div className={styles.details__benefitDecor} data-media-slot="benefits-botanical" aria-hidden="true" />
 
             <h2>WHY RENT WITH CLICKMATE?</h2>
 
@@ -88,15 +77,12 @@ const Details: React.FC = () => {
          </div>
 
          <div id="about" className={styles.details__story}>
-            <div className={styles.details__mountains} aria-hidden="true">
-               <i /><i /><i />
-            </div>
+            <div className={styles.details__panoramaSlot} data-media-slot="bottom-panorama" aria-hidden="true" />
 
-            <div className={styles.details__storyFilmstrip} aria-hidden="true">
-               <div><img src={filmOne} alt="" /></div>
-               <div><img src={filmTwo} alt="" /></div>
-               <div><img src={filmThree} alt="" /></div>
-            </div>
+            <FilmStripPlaceholder
+               className={styles.details__storyFilmstrip}
+               slot="bottom-film-strip"
+            />
 
             <blockquote className={styles.details__quote}>
                “Some moments<br />
@@ -104,8 +90,8 @@ const Details: React.FC = () => {
                than a phone camera.”
             </blockquote>
 
-            <figure className={styles.details__landscapeCard}>
-               <img src={landscape} alt="" />
+            <figure className={styles.details__landscapeCard} data-media-slot="bottom-photo">
+               <div aria-hidden="true" />
             </figure>
 
             <div className={styles.details__seeDavao}>

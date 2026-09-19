@@ -1,73 +1,62 @@
 @use "./../../styles/abstracts/variables" as *;
 
+$ink: #3d4033;
+$paper: #e2d8c8;
+$paper-dark: #d2c6b3;
+$olive: #505442;
+
 .navbar {
    position: relative;
    z-index: 20;
-   min-height: 9rem;
-   padding: 1.5rem max($layout-gutter, calc((100vw - 64rem) / 2));
-   color: #31382a;
+   height: 9.05rem;
+   color: $ink;
    background:
-      linear-gradient(rgba(218, 205, 184, 0.97), rgba(218, 205, 184, 0.97)),
-      repeating-linear-gradient(0deg, transparent 0 6px, rgba(49, 56, 42, 0.025) 6px 7px);
-
-   &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -0.8rem;
-      height: 1.6rem;
-      background: #d8cbb4;
-      clip-path: polygon(0 16%, 14% 36%, 28% 13%, 41% 34%, 57% 8%, 72% 32%, 88% 10%, 100% 28%, 100% 100%, 0 100%);
-      opacity: 0.85;
-   }
+      linear-gradient(rgba(221, 211, 194, 0.96), rgba(221, 211, 194, 0.96)),
+      repeating-linear-gradient(0deg, transparent 0 6px, rgba(61, 64, 51, 0.028) 6px 7px);
 
    &__canvas {
       position: relative;
-      max-width: 64rem;
-      height: 6.2rem;
+      width: min(100%, 64rem);
+      height: 100%;
       margin: 0 auto;
    }
 
    &__brand {
       position: absolute;
-      left: 1.7%;
-      top: 0.6rem;
-      width: 18%;
-      min-width: 8.7rem;
-      height: 5.3rem;
+      left: 2.5%;
+      top: 2.75rem;
+      width: 17.5%;
+      height: 5.45rem;
       display: grid;
       place-items: center;
-      padding: 0.5rem 0.8rem;
-      background: #eadfc8;
-      border: 1px solid rgba(50, 58, 43, 0.15);
-      box-shadow: 0 7px 14px rgba(52, 45, 33, 0.11);
-      clip-path: polygon(1% 10%, 96% 0, 100% 89%, 7% 100%, 0 17%);
-      transform: rotate(-1deg);
+      padding: 0.45rem 0.75rem;
+      background: #e8decb;
+      border: 1px solid rgba(61, 64, 51, 0.12);
+      box-shadow: 0 5px 10px rgba(51, 45, 34, 0.08);
+      clip-path: polygon(2% 7%, 96% 0, 100% 89%, 5% 100%, 0 16%);
+      transform: rotate(-1.2deg);
 
       img {
-         width: 88%;
-         max-width: 9.5rem;
+         width: 92%;
          height: auto;
-         filter: sepia(0.16) saturate(0.84) contrast(0.95);
+         filter: sepia(0.14) saturate(0.8) contrast(0.94);
       }
    }
 
    &__menu {
       position: absolute;
-      left: 19.5%;
-      top: 1.15rem;
-      width: 48.5%;
-      height: 4.2rem;
-      padding-inline: 1.25rem;
+      left: 20.6%;
+      top: 2.95rem;
+      width: 46.8%;
+      height: 4rem;
+      padding-inline: 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.7rem;
-      background: rgba(229, 218, 196, 0.78);
-      border-top: 1px solid rgba(52, 59, 44, 0.11);
-      border-bottom: 1px solid rgba(52, 59, 44, 0.16);
-      box-shadow: 0 5px 10px rgba(53, 47, 34, 0.05);
+      gap: 0.6rem;
+      background: rgba(232, 222, 203, 0.72);
+      border-top: 1px solid rgba(61, 64, 51, 0.09);
+      border-bottom: 1px solid rgba(61, 64, 51, 0.13);
 
       a {
          position: relative;
@@ -78,27 +67,26 @@
          font-family: "Spectral", serif;
          font-size: 0.66rem;
          font-weight: 600;
-         letter-spacing: 0.025em;
-         color: #31382a;
+         color: $ink;
 
          &:first-child::after {
             content: "";
             position: absolute;
             left: 0;
             right: 0;
-            bottom: 0.95rem;
+            bottom: 0.9rem;
             height: 1px;
-            background: #31382a;
+            background: currentColor;
          }
       }
    }
 
    &__actions {
       position: absolute;
-      right: 1.6%;
-      top: 0;
-      width: 28.5%;
-      height: 6rem;
+      right: 2.7%;
+      top: 1.15rem;
+      width: 28%;
+      height: 6.5rem;
    }
 
    &__location {
@@ -106,34 +94,32 @@
       left: 0;
       top: 0;
       font-family: "Segoe Print", "Bradley Hand", cursive;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       line-height: 1.08;
-      color: #31382a;
       transform: rotate(-3deg);
 
       span {
-         margin-left: 0.2rem;
+         margin-left: 0.15rem;
          font-family: serif;
-         font-size: 1.5rem;
+         font-size: 1.35rem;
       }
    }
 
    &__rent {
       position: absolute;
       right: 0;
-      top: 2.3rem;
-      width: 10rem;
-      height: 3.25rem;
+      top: 3rem;
+      width: 9.6rem;
+      height: 3.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.55rem;
+      gap: 0.6rem;
       font-family: "Spectral", serif;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 600;
-      color: #eee4cf;
-      background: #3e4534;
-      box-shadow: 0 5px 9px rgba(42, 39, 29, 0.13);
+      color: #e9e0cf;
+      background: #3e4334;
       clip-path: polygon(2% 8%, 97% 0, 100% 91%, 3% 100%, 0 15%);
    }
 
@@ -144,15 +130,10 @@
 
 @media (max-width: 56.25rem) {
    .navbar {
-      min-height: 5.25rem;
-      padding: 0.55rem $layout-gutter 0.75rem;
-
-      &::before {
-         display: none;
-      }
+      height: 5.3rem;
+      padding-inline: $layout-gutter;
 
       &__canvas {
-         height: 4.25rem;
          display: flex;
          align-items: center;
          justify-content: space-between;
@@ -161,8 +142,7 @@
       &__brand {
          position: relative;
          inset: auto;
-         width: 8.6rem;
-         min-width: 0;
+         width: 8.7rem;
          height: 4rem;
       }
 
@@ -178,15 +158,14 @@
          flex-direction: column;
          justify-content: center;
          gap: 0.3rem;
-         border: 1px solid rgba(49, 56, 42, 0.28);
-         background: #e7dbc1;
+         border: 1px solid rgba(61, 64, 51, 0.24);
+         background: #e3d8c4;
          cursor: pointer;
 
          span {
             width: 100%;
             height: 2px;
-            background: #31382a;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            background: $ink;
          }
       }
 
@@ -213,16 +192,14 @@
          flex-direction: column;
          align-items: stretch;
          gap: 0;
-         background: #e6dac0;
-         border: 1px solid rgba(49, 56, 42, 0.2);
-         box-shadow: 0 12px 20px rgba(48, 42, 30, 0.14);
-         transition: max-height 0.25s ease, opacity 0.18s ease;
+         background: #e3d8c4;
+         border: 1px solid rgba(61, 64, 51, 0.18);
 
          a {
             min-height: 3rem;
             padding: 0 1rem;
-            font-size: 0.76rem;
-            border-bottom: 1px dashed rgba(49, 56, 42, 0.14);
+            font-size: 0.75rem;
+            border-bottom: 1px solid rgba(61, 64, 51, 0.1);
 
             &:first-child::after {
                display: none;
@@ -236,11 +213,5 @@
          opacity: 1;
          pointer-events: auto;
       }
-   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-   .navbar * {
-      transition: none !important;
    }
 }
