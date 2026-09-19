@@ -1,60 +1,110 @@
 import React from "react";
 import styles from "./Details.module.scss";
-import memoryPhoto from "./../../images/placeholders/113856696826524513.jpg";
+import logo from "./../../images/logo.svg";
+
+import filmOne from "./../../images/placeholders/4503668374211989.jpg";
+import filmTwo from "./../../images/placeholders/63472675994358110.jpg";
+import filmThree from "./../../images/placeholders/63965257213259025.jpg";
+import landscape from "./../../images/placeholders/113856696826524513.jpg";
+
+const CameraIcon = () => (
+   <svg viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M10 15h8l3-5h7l3 5h7a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V19a4 4 0 0 1 4-4Z" />
+      <circle cx="24" cy="28" r="8" />
+   </svg>
+);
+
+const LeafIcon = () => (
+   <svg viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M24 41V22M24 29c-8 0-12-5-12-12 7 0 12 4 12 12ZM24 24c0-8 5-13 13-13 0 8-5 13-13 13Z" />
+   </svg>
+);
+
+const HeartIcon = () => (
+   <svg viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M24 40S7 29 7 17c0-6 4-10 9-10 4 0 7 2 8 6 1-4 4-6 8-6 5 0 9 4 9 10 0 12-17 23-17 23Z" />
+   </svg>
+);
 
 const Details: React.FC = () => {
    return (
-      <section className={styles.details} aria-label="Rental information">
-         <div className={styles.details__wrapper}>
-            <div id="how-it-works" className={styles.details__steps}>
-               <div className={styles.details__intro}>
-                  <span>HOW IT WORKS</span>
-                  <h2>Rent. Shoot. Explore. Repeat.</h2>
-                  <p>Keep it simple. Pick a camera, confirm your dates, then go make something worth remembering.</p>
-               </div>
+      <section className={styles.details}>
+         <div id="how-it-works" className={styles.details__benefits}>
+            <h2>WHY RENT WITH CLICKMATE?</h2>
 
-               <ol className={styles.details__stepList}>
-                  <li>
-                     <span>01</span>
-                     <strong>Choose</strong>
-                     <p>Pick the camera that fits the kind of day you have in mind.</p>
-                  </li>
-                  <li>
-                     <span>02</span>
-                     <strong>Book</strong>
-                     <p>Send your preferred dates and we’ll confirm availability.</p>
-                  </li>
-                  <li>
-                     <span>03</span>
-                     <strong>Create</strong>
-                     <p>Take it out, enjoy the moment, then return it after your rental.</p>
-                  </li>
-               </ol>
-            </div>
+            <div className={styles.details__benefitGrid}>
+               <article>
+                  <CameraIcon />
+                  <h3>Quality Gear</h3>
+                  <p>Well-maintained and ready for your next adventure.</p>
+               </article>
 
-            <div className={styles.details__bottom}>
-               <div id="pricing" className={styles.details__pricing}>
-                  <p className={styles.details__handwritten}>Good memories, anywhere.</p>
-                  <h3>Simple daily rentals.</h3>
-                  <p>Camera rates currently start at <strong>₱250/day</strong>. Exact pricing depends on the camera you choose.</p>
-                  <a href="#cameras">See camera rates →</a>
-               </div>
+               <article>
+                  <LeafIcon />
+                  <h3>Flexible Rentals</h3>
+                  <p>Daily and multi-day options that fit your plans.</p>
+               </article>
 
-               <figure className={styles.details__photo}>
-                  <img src={memoryPhoto} alt="" />
-                  <figcaption>Different stories. Same magic. ♡</figcaption>
-               </figure>
-
-               <div id="contact" className={styles.details__contact}>
-                  <span>CLICKMATE RENTALS</span>
-                  <h3>Here for the good shots.</h3>
-                  <p>Davao City, Philippines</p>
-                  <p className={styles.details__contactNote}>
-                     Contact details and booking links can be added here once the final rental flow is ready.
-                  </p>
-               </div>
+               <article>
+                  <HeartIcon />
+                  <h3>Local and Trusted</h3>
+                  <p>Based in Davao City, for creators, travelers, and everyone in between.</p>
+               </article>
             </div>
          </div>
+
+         <div id="about" className={styles.details__story}>
+            <div className={styles.details__filmstrip} aria-hidden="true">
+               <div><img src={filmOne} alt="" /></div>
+               <div><img src={filmTwo} alt="" /></div>
+               <div><img src={filmThree} alt="" /></div>
+            </div>
+
+            <div className={styles.details__adventureNote}>
+               More<br />
+               Adventures<br />
+               Here! ♡
+            </div>
+
+            <blockquote className={styles.details__quote}>
+               “Some moments<br />
+               deserve more<br />
+               than a phone camera.”
+            </blockquote>
+
+            <img className={styles.details__landscape} src={landscape} alt="" />
+
+            <div className={styles.details__seeDavao}>
+               See Davao<br />
+               <span>Differently</span>
+            </div>
+
+            <div className={styles.details__postmark}>
+               DAVAO CITY
+               <span>PHILIPPINES</span>
+            </div>
+         </div>
+
+         <footer id="contact" className={styles.details__footer}>
+            <div className={styles.details__footerBrand}>
+               <img src={logo} alt="ClickMate Rentals" />
+               <span>CLICKMATE RENTALS</span>
+            </div>
+
+            <nav aria-label="Footer navigation">
+               <a href="#cameras">CAMERAS</a>
+               <a href="#home">PEOPLE</a>
+               <a href="#about">PLACES</a>
+               <a href="#about">STORIES</a>
+            </nav>
+
+            <div className={styles.details__social}>
+               <span aria-hidden="true">◎</span>
+               <span aria-hidden="true">●</span>
+               <i />
+               <p>Keep shooting ♡</p>
+            </div>
+         </footer>
       </section>
    );
 };

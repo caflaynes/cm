@@ -7,7 +7,8 @@ const Navbar: React.FC = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
    useEffect(() => {
-      const handleScroll = () => setIsSticky(window.scrollY > 24);
+      const handleScroll = () => setIsSticky(window.scrollY > 20);
+
       handleScroll();
       window.addEventListener("scroll", handleScroll, { passive: true });
       return () => window.removeEventListener("scroll", handleScroll);
@@ -16,20 +17,25 @@ const Navbar: React.FC = () => {
    useEffect(() => {
       if (!isMenuOpen) return;
 
-      const handleKeyDown = (event: KeyboardEvent) => {
+      const closeOnEscape = (event: KeyboardEvent) => {
          if (event.key === "Escape") setIsMenuOpen(false);
       };
 
-      window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
+      window.addEventListener("keydown", closeOnEscape);
+      return () => window.removeEventListener("keydown", closeOnEscape);
    }, [isMenuOpen]);
 
    const closeMenu = () => setIsMenuOpen(false);
 
    return (
       <header className={`${styles.navbar} ${isSticky ? styles.sticky : ""}`}>
-         <div className={styles.navbar__wrapper}>
-            <a className={styles.navbar__brand} href="#home" onClick={closeMenu}>
+         <div className={styles.navbar__canvas}>
+            <a
+               className={styles.navbar__brand}
+               href="#home"
+               onClick={closeMenu}
+               aria-label="ClickMate Rentals home"
+            >
                <img src={logo} alt="ClickMate Rentals" />
             </a>
 
@@ -39,7 +45,7 @@ const Navbar: React.FC = () => {
                aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                aria-expanded={isMenuOpen}
                aria-controls="primary-navigation"
-               onClick={() => setIsMenuOpen((current) => !current)}
+               onClick={() => setIsMenuOpen((open) => !open)}
             >
                <span />
                <span />
@@ -51,14 +57,22 @@ const Navbar: React.FC = () => {
                className={`${styles.navbar__menu} ${isMenuOpen ? styles.navbar__menuOpen : ""}`}
                aria-label="Primary navigation"
             >
-               <ul className={styles.navbar__list} role="list">
-                  <li><a href="#home" onClick={closeMenu}>HOME</a></li>
-                  <li><a href="#cameras" onClick={closeMenu}>CAMERAS</a></li>
-                  <li><a href="#how-it-works" onClick={closeMenu}>HOW IT WORKS</a></li>
-                  <li><a href="#pricing" onClick={closeMenu}>PRICING</a></li>
-                  <li><a href="#contact" onClick={closeMenu}>CONTACT</a></li>
-               </ul>
+               <a href="#home" onClick={closeMenu}>HOME</a>
+               <a href="#cameras" onClick={closeMenu}>CAMERAS</a>
+               <a href="#how-it-works" onClick={closeMenu}>HOW IT WORKS</a>
+               <a href="#about" onClick={closeMenu}>ABOUT</a>
+               <a href="#contact" onClick={closeMenu}>CONTACT</a>
             </nav>
+
+            <div className={styles.navbar__actions}>
+               <p className={styles.navbar__location}>
+                  Davao City<br />
+                  Philippines <span aria-hidden="true">⌖</span>
+               </p>
+               <a className={styles.navbar__rent} href="#cameras">
+                  RENT NOW <span aria-hidden="true">→</span>
+               </a>
+            </div>
          </div>
       </header>
    );

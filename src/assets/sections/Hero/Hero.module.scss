@@ -2,387 +2,441 @@
 
 .hero {
    position: relative;
+   min-height: 39rem;
+   padding: clamp(2.1rem, 4vw, 3.6rem) $layout-gutter clamp(3.5rem, 7vw, 6rem);
+   color: #35402d;
    background:
-      linear-gradient(rgba(226, 216, 191, 0.78), rgba(226, 216, 191, 0.78)),
-      repeating-linear-gradient(90deg, transparent 0 7px, rgba(53, 64, 45, 0.026) 7px 8px);
-   padding: clamp(1rem, 2.5vw, 2rem) $layout-gutter clamp(4rem, 8vw, 7rem);
-   overflow: hidden;
+      linear-gradient(rgba(218, 208, 181, 0.9), rgba(218, 208, 181, 0.9)),
+      repeating-linear-gradient(0deg, transparent 0 5px, rgba(54, 61, 43, 0.03) 5px 6px);
 
-   &::before {
+   &::before,
+   &::after {
       content: "";
       position: absolute;
-      inset: 0;
       pointer-events: none;
-      background:
-         radial-gradient(circle at 12% 18%, rgba(66, 75, 50, 0.09), transparent 19%),
-         radial-gradient(circle at 78% 72%, rgba(128, 102, 65, 0.08), transparent 22%),
-         linear-gradient(120deg, rgba(255,255,255,0.18), transparent 42%);
-      mix-blend-mode: multiply;
+      opacity: 0.5;
    }
 
-   &__collage {
+   &::before {
+      inset: 0 auto 0 0;
+      width: clamp(3.5rem, 8vw, 7rem);
+      background:
+         radial-gradient(ellipse at 20% 15%, rgba(55, 74, 44, 0.8) 0 14%, transparent 15%),
+         radial-gradient(ellipse at 70% 27%, rgba(75, 92, 59, 0.72) 0 17%, transparent 18%),
+         radial-gradient(ellipse at 25% 52%, rgba(50, 69, 42, 0.7) 0 15%, transparent 16%),
+         radial-gradient(ellipse at 65% 78%, rgba(68, 85, 53, 0.7) 0 18%, transparent 19%);
+      filter: blur(0.3px);
+   }
+
+   &::after {
+      top: 1rem;
+      right: 0;
+      width: clamp(4rem, 9vw, 7.5rem);
+      height: 90%;
+      background:
+         radial-gradient(ellipse at 75% 18%, rgba(55, 74, 44, 0.72) 0 16%, transparent 17%),
+         radial-gradient(ellipse at 30% 42%, rgba(72, 87, 55, 0.68) 0 18%, transparent 19%),
+         radial-gradient(ellipse at 70% 68%, rgba(52, 70, 43, 0.68) 0 15%, transparent 16%);
+   }
+
+   &__canvas {
       position: relative;
       z-index: 1;
-      max-width: 76rem;
-      min-height: 58rem;
+      max-width: 72rem;
+      min-height: 31rem;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      grid-template-rows: repeat(10, 5rem);
-      gap: clamp(0.5rem, 1.2vw, 0.9rem);
+      grid-template-columns: minmax(18rem, 0.9fr) minmax(29rem, 1.3fr);
+      align-items: center;
+      gap: clamp(2rem, 5vw, 4rem);
    }
 
-   .scrap,
-   .photo,
-   &__brandCard,
-   &__filmstrip {
-      box-shadow: 0 10px 24px rgba(61, 55, 39, 0.14);
-   }
-
-   .scrap {
+   &__copy {
       position: relative;
-      padding: 1.2rem;
-      color: #36412f;
-      background: #e5ddc3;
-      border: 1px solid rgba(66, 72, 48, 0.16);
+      z-index: 3;
+      padding: clamp(2.2rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2.6rem);
+      background:
+         linear-gradient(rgba(236, 227, 203, 0.94), rgba(236, 227, 203, 0.94)),
+         repeating-linear-gradient(90deg, transparent 0 7px, rgba(62, 58, 43, 0.028) 7px 8px);
+      border: 1px solid rgba(63, 69, 49, 0.12);
+      box-shadow: 0 10px 22px rgba(57, 49, 35, 0.07);
+      clip-path: polygon(1% 2%, 98% 0, 100% 97%, 3% 100%, 0 7%);
+   }
+
+   &__kicker {
+      margin: 0 0 0.7rem;
+      font-family: "Kollektif", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+   }
+
+   h1 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 0.88;
+   }
+
+   &__serif {
+      font-family: "Spectral", serif;
+      font-size: clamp(3.7rem, 7vw, 6.4rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+   }
+
+   &__script {
+      margin: 0.2rem 0 0 1.2rem;
+      font-family: "Segoe Script", "Brush Script MT", "Bradley Hand", cursive;
+      font-size: clamp(3.4rem, 6.3vw, 5.8rem);
+      font-weight: 400;
+      line-height: 0.8;
+      transform: rotate(-2deg);
+   }
+
+   &__description {
+      max-width: 22rem;
+      margin-top: 1.7rem;
+      font-family: "Spectral", serif;
+      font-size: 0.98rem;
+      line-height: 1.45;
+   }
+
+   &__cta {
+      width: fit-content;
+      margin-top: 1.5rem;
+      padding: 0.85rem 1.45rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-family: "Spectral", serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #eee4cc;
+      background: #34412f;
+      clip-path: polygon(1% 6%, 99% 0, 100% 92%, 3% 100%, 0 12%);
+      transition: transform 0.18s ease, background-color 0.18s ease;
+
+      &:hover,
+      &:focus-visible {
+         transform: translateY(-2px);
+         background: #46553d;
+      }
+   }
+
+   &__visual {
+      position: relative;
+      min-height: 31rem;
+   }
+
+   &__polaroid {
+      position: absolute;
+      margin: 0;
+      padding: 0.55rem 0.55rem 1.65rem;
+      background: #e9dfc7;
+      border: 1px solid rgba(55, 63, 46, 0.16);
+      box-shadow: 0 12px 22px rgba(49, 43, 30, 0.14);
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         filter: sepia(0.14) saturate(0.82) contrast(0.96);
+      }
+
+      figcaption {
+         position: absolute;
+         left: 0.75rem;
+         right: 0.75rem;
+         bottom: 0.32rem;
+         font-family: "Segoe Print", "Bradley Hand", cursive;
+         font-size: 0.77rem;
+         text-align: center;
+      }
+   }
+
+   &__mountain {
+      z-index: 2;
+      top: 1.3rem;
+      left: 3%;
+      width: 42%;
+      height: 20rem;
+      transform: rotate(-7deg);
+   }
+
+   &__portrait {
+      z-index: 1;
+      top: 0;
+      right: 11%;
+      width: 40%;
+      height: 18.6rem;
+      transform: rotate(7deg);
 
       &::after {
          content: "";
          position: absolute;
-         inset: 0.25rem;
-         border: 1px solid rgba(255, 255, 255, 0.22);
-         pointer-events: none;
-      }
-   }
-
-   .photo {
-      margin: 0;
-      padding: 0.55rem;
-      background: #e9e0ca;
-      border: 1px solid rgba(52, 63, 45, 0.18);
-      overflow: hidden;
-
-      img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         filter: sepia(0.18) saturate(0.82) contrast(0.96);
-      }
-
-      figcaption {
-         font-family: "Segoe Print", "Bradley Hand", cursive;
-         color: #37422f;
-      }
-   }
-
-   &__headline {
-      grid-column: 1 / 4;
-      grid-row: 1 / 4;
-      align-self: start;
-      transform: rotate(-1.1deg);
-      background: #b9bea0 !important;
-   }
-
-   &__headlineText {
-      font-family: "Spectral", serif;
-      font-size: clamp(1.7rem, 3vw, 2.75rem);
-      line-height: 0.98;
-   }
-
-   &__smallCopy {
-      margin-top: 0.85rem;
-      font-family: "Spectral", serif;
-      line-height: 1.25;
-   }
-
-   &__rule {
-      display: block;
-      width: 3.4rem;
-      height: 1px;
-      margin: 1rem 0;
-      background: #46523a;
-   }
-
-   &__leafPhoto {
-      grid-column: 4 / 6;
-      grid-row: 1 / 3;
-      transform: rotate(1.3deg);
-   }
-
-   &__mantra {
-      grid-column: 4 / 6;
-      grid-row: 3 / 5;
-      transform: rotate(-2.1deg);
-      font-family: "Segoe Print", "Bradley Hand", cursive;
-      font-size: clamp(1rem, 1.8vw, 1.4rem);
-      text-align: center;
-
-      span {
-         display: block;
-         margin-top: 0.25rem;
-         font-size: 1.6rem;
+         top: -0.65rem;
+         left: 31%;
+         width: 4.3rem;
+         height: 1.25rem;
+         background: rgba(177, 156, 111, 0.55);
+         transform: rotate(-5deg);
       }
    }
 
    &__filmstrip {
-      grid-column: 6 / 9;
-      grid-row: 1 / 5;
-      z-index: 3;
-      padding: 1rem 0.7rem;
+      position: absolute;
+      z-index: 0;
+      top: 1rem;
+      right: -2%;
+      width: 7.8rem;
+      height: 22.5rem;
+      padding: 1rem 0.75rem;
       display: grid;
-      gap: 0.45rem;
-      background: #202119;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 0.42rem;
+      background:
+         repeating-linear-gradient(
+            to bottom,
+            #24251d 0 0.45rem,
+            #d8cfb5 0.45rem 0.72rem,
+            #24251d 0.72rem 1.17rem
+         );
+      border: 0.32rem solid #24251d;
+      box-shadow: 0 10px 20px rgba(37, 34, 25, 0.18);
+      transform: rotate(7deg);
+
+      div {
+         padding: 0.2rem;
+         overflow: hidden;
+         background: #d6ccb2;
+         border: 0.22rem solid #24251d;
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(0.16) saturate(0.78);
+         }
+      }
+   }
+
+   &__note {
+      position: absolute;
+      z-index: 4;
+      top: 10.2rem;
+      right: 10%;
+      width: 7.6rem;
+      padding: 0.8rem 0.65rem;
+      font-family: "Segoe Print", "Bradley Hand", cursive;
+      font-size: 0.83rem;
+      line-height: 1.18;
+      text-align: center;
+      background: #ddd2b8;
+      transform: rotate(6deg);
+
+      span {
+         display: block;
+         margin-top: 0.25rem;
+         font-size: 1.15rem;
+      }
+   }
+
+   &__memoryNote {
+      position: absolute;
+      z-index: 5;
+      left: -1%;
+      bottom: 1rem;
+      font-family: "Segoe Print", "Bradley Hand", cursive;
+      font-size: 0.8rem;
+      line-height: 1.15;
+      transform: rotate(-8deg);
+   }
+
+   &__camera {
+      position: absolute;
+      z-index: 6;
+      right: 11%;
+      bottom: -0.6rem;
+      width: min(23rem, 58%);
+      filter: sepia(0.2) saturate(0.72) drop-shadow(0 14px 12px rgba(47, 40, 28, 0.2));
       transform: rotate(4deg);
    }
 
-   &__filmFrame {
-      position: relative;
-      min-height: 0;
-      padding: 0.25rem;
-      background: #efe3c8;
-
-      img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         filter: sepia(0.2) saturate(0.82);
-      }
-
-      span {
-         position: absolute;
-         right: 0.4rem;
-         bottom: 0.3rem;
-         padding: 0.1rem 0.25rem;
-         font: 600 0.55rem/1 "Kollektif", sans-serif;
-         color: #eee4cc;
-         background: #27291f;
-      }
-   }
-
-   &__location {
-      grid-column: 9 / 11;
-      grid-row: 1 / 4;
-      transform: rotate(1.2deg);
-      font-family: "Spectral", serif;
-   }
-
-   &__locationLead {
-      font-size: clamp(1.2rem, 2vw, 1.7rem);
-      line-height: 1.2;
-   }
-
-   &__pin {
-      display: block;
-      margin-top: 0.65rem;
-      font-size: 1.25rem;
-   }
-
-   &__adventure {
-      grid-column: 11 / 13;
-      grid-row: 2 / 4;
-      align-self: center;
-      transform: rotate(-3deg);
-      background: #aeb58d !important;
-      font-family: "Segoe Print", "Bradley Hand", cursive;
-      text-align: center;
-
-      span {
-         display: block;
-         margin-top: 0.3rem;
-         font-size: 1.5rem;
-      }
-   }
-
-   &__cameraPhoto {
-      grid-column: 1 / 5;
-      grid-row: 5 / 8;
-      transform: rotate(-2deg);
-
-      figcaption {
-         padding: 0.8rem 0.3rem 0.25rem;
-         font-size: 0.92rem;
-         text-align: center;
-      }
-   }
-
-   &__cityPhoto {
-      grid-column: 9 / 13;
-      grid-row: 4 / 7;
-      transform: rotate(1deg);
-   }
-
-   &__brandCard {
-      grid-column: 4 / 10;
-      grid-row: 5 / 8;
+   &__stamp {
+      position: absolute;
       z-index: 5;
-      align-self: center;
-      padding: clamp(1.8rem, 4vw, 3rem);
+      left: 28%;
+      bottom: 0.5rem;
+      width: 4.4rem;
+      height: 5.6rem;
+      padding: 0.6rem 0.35rem;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      text-align: center;
-      color: #35402d;
-      background:
-         linear-gradient(rgba(239, 230, 208, 0.95), rgba(239, 230, 208, 0.95)),
-         repeating-linear-gradient(0deg, transparent 0 6px, rgba(68, 62, 43, 0.03) 6px 7px);
-      border: 1px solid rgba(60, 68, 45, 0.24);
-      clip-path: polygon(1.2% 3%, 98.7% 0, 100% 96%, 2% 100%, 0 8%);
-      transform: rotate(-0.5deg);
-
-      button {
-         margin-top: 1.25rem;
-      }
-   }
-
-   &__logo {
-      width: min(19rem, 75%);
-      max-height: 9rem;
-      object-fit: contain;
-      margin-bottom: 0.3rem;
-   }
-
-   &__eyebrow {
-      font-family: "Kollektif", sans-serif;
-      font-size: 0.73rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-   }
-
-   &__brandCard h1 {
-      max-width: 30rem;
-      margin-top: 0.65rem;
       font-family: "Spectral", serif;
-      font-size: clamp(1.7rem, 3vw, 2.7rem);
-      font-weight: 700;
-      line-height: 1.05;
-   }
-
-   &__brandCopy {
-      max-width: 34rem;
-      margin-top: 0.8rem;
-      font-family: "Spectral", serif;
-      font-size: 0.95rem;
-      line-height: 1.55;
-   }
-
-   &__categories {
-      grid-column: 4 / 7;
-      grid-row: 8 / 10;
-      transform: rotate(1.3deg);
-      font-family: "Spectral", serif;
-      line-height: 1.35;
+      color: #34412f;
+      background: #c9c69e;
+      border: 0.2rem double #59634d;
+      transform: rotate(-4deg);
 
       span {
-         display: inline-block;
-         margin-top: 0.55rem;
-         padding-top: 0.45rem;
-         border-top: 1px solid rgba(53, 64, 45, 0.45);
-         font-family: "Segoe Print", "Bradley Hand", cursive;
+         font-size: 1.35rem;
+         font-weight: 700;
+      }
+
+      small {
+         margin-top: 0.35rem;
+         font-size: 0.5rem;
+         letter-spacing: 0.12em;
       }
    }
 
-   &__memoryPhoto {
-      grid-column: 7 / 10;
-      grid-row: 8 / 11;
-      transform: rotate(2.2deg);
+   &__flowerCluster {
+      position: absolute;
+      z-index: 7;
+      right: 34%;
+      bottom: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.12rem;
+      color: #e6ddc0;
+      text-shadow: 0 1px 0 #69745a, 1px 0 0 #69745a, -1px 0 0 #69745a;
+      transform: rotate(-10deg);
 
-      figcaption {
-         padding: 0.7rem 0.2rem 0.15rem;
-         text-transform: uppercase;
-         letter-spacing: 0.08em;
-         font-family: "Spectral", serif;
-         font-size: 0.72rem;
-         text-align: center;
+      span:nth-child(1),
+      span:nth-child(3) {
+         font-size: 2.6rem;
       }
-   }
 
-   &__quote {
-      grid-column: 10 / 13;
-      grid-row: 7 / 10;
-      align-self: end;
-      transform: rotate(-1.8deg);
-      background: #c5c49e !important;
-      font-family: "Segoe Print", "Bradley Hand", cursive;
-      font-size: clamp(1rem, 1.8vw, 1.35rem);
-
-      span {
-         display: block;
-         margin-top: 0.5rem;
-         font-size: 1.5rem;
+      span:nth-child(2) {
+         font-size: 3.6rem;
       }
    }
 }
 
 @media (max-width: 64rem) {
    .hero {
-      &__collage {
-         min-height: 54rem;
-         grid-template-rows: repeat(10, 4.6rem);
+      &__canvas {
+         grid-template-columns: minmax(17rem, 0.92fr) minmax(24rem, 1.08fr);
+         gap: 1.5rem;
       }
 
-      &__headline {
-         grid-column: 1 / 4;
+      &__serif {
+         font-size: clamp(3.3rem, 6.6vw, 5.2rem);
       }
 
-      &__brandCard {
-         grid-column: 4 / 10;
+      &__script {
+         font-size: clamp(3rem, 5.9vw, 4.8rem);
       }
    }
 }
 
 @media (max-width: $breakpoint-nav) {
    .hero {
-      &__collage {
+      min-height: auto;
+
+      &__canvas {
          min-height: auto;
-         grid-template-columns: repeat(6, minmax(0, 1fr));
-         grid-template-rows: none;
-         grid-auto-rows: minmax(7rem, auto);
+         grid-template-columns: 1fr;
+         gap: 2rem;
       }
 
-      &__headline { grid-column: 1 / 3; grid-row: 1 / 3; }
-      &__leafPhoto { grid-column: 3 / 5; grid-row: 1 / 2; }
-      &__mantra { grid-column: 3 / 5; grid-row: 2 / 3; }
-      &__filmstrip { grid-column: 5 / 7; grid-row: 1 / 4; }
-      &__location { grid-column: 1 / 3; grid-row: 3 / 5; }
-      &__adventure { grid-column: 3 / 5; grid-row: 3 / 4; }
-      &__cityPhoto { grid-column: 3 / 5; grid-row: 4 / 6; }
-      &__cameraPhoto { grid-column: 1 / 3; grid-row: 5 / 7; }
-      &__brandCard { grid-column: 2 / 6; grid-row: 6 / 9; }
-      &__categories { grid-column: 1 / 3; grid-row: 8 / 10; }
-      &__memoryPhoto { grid-column: 3 / 5; grid-row: 9 / 11; }
-      &__quote { grid-column: 5 / 7; grid-row: 8 / 10; }
+      &__copy {
+         max-width: 38rem;
+         width: 100%;
+         margin-inline: auto;
+      }
+
+      &__visual {
+         width: min(38rem, 100%);
+         min-height: 30rem;
+         margin-inline: auto;
+      }
+
+      &__memoryNote {
+         left: 4%;
+      }
    }
 }
 
 @media (max-width: $breakpoint-mobile) {
    .hero {
-      padding-inline: 0.75rem;
+      padding-inline: 0.7rem;
 
-      &__collage {
-         grid-template-columns: repeat(2, minmax(0, 1fr));
-         grid-auto-rows: minmax(7rem, auto);
-         gap: 0.65rem;
+      &__copy {
+         padding: 2rem 1.2rem 2.2rem;
       }
 
-      &__headline { grid-column: 1; grid-row: 1 / 3; }
-      &__leafPhoto { grid-column: 2; grid-row: 1; }
-      &__mantra { grid-column: 2; grid-row: 2; }
-      &__filmstrip { grid-column: 1 / 3; grid-row: 3; grid-template-columns: repeat(3, 1fr); transform: rotate(1.5deg); }
-      &__location { grid-column: 1; grid-row: 4 / 6; }
-      &__adventure { grid-column: 2; grid-row: 4; }
-      &__cityPhoto { grid-column: 2; grid-row: 5 / 7; }
-      &__cameraPhoto { grid-column: 1; grid-row: 6 / 8; }
-      &__brandCard { grid-column: 1 / 3; grid-row: 8; padding: 2rem 1.15rem; transform: rotate(0); clip-path: none; }
-      &__categories { grid-column: 1; grid-row: 9 / 11; }
-      &__memoryPhoto { grid-column: 2; grid-row: 9 / 11; }
-      &__quote { grid-column: 1 / 3; grid-row: 11; }
-
-      &__filmFrame {
-         min-height: 8.5rem;
+      &__serif {
+         font-size: clamp(3rem, 14vw, 4.4rem);
       }
 
-      &__brandCard h1 {
-         font-size: clamp(1.7rem, 8vw, 2.3rem);
+      &__script {
+         margin-left: 0.6rem;
+         font-size: clamp(2.8rem, 13vw, 4.1rem);
       }
+
+      &__description {
+         max-width: none;
+      }
+
+      &__visual {
+         min-height: 25.5rem;
+      }
+
+      &__mountain {
+         left: 1%;
+         width: 47%;
+         height: 15rem;
+      }
+
+      &__portrait {
+         right: 9%;
+         width: 42%;
+         height: 13.8rem;
+      }
+
+      &__filmstrip {
+         right: -2%;
+         width: 5.6rem;
+         height: 17rem;
+         padding-inline: 0.45rem;
+      }
+
+      &__note {
+         top: 7.4rem;
+         right: 7%;
+         width: 6rem;
+         font-size: 0.68rem;
+      }
+
+      &__camera {
+         right: 8%;
+         width: 61%;
+      }
+
+      &__stamp {
+         left: 19%;
+         width: 3.8rem;
+         height: 4.8rem;
+      }
+
+      &__memoryNote {
+         bottom: 0.3rem;
+         font-size: 0.68rem;
+      }
+
+      &__flowerCluster {
+         right: 31%;
+      }
+   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .hero__cta {
+      transition: none;
    }
 }

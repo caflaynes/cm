@@ -1,98 +1,75 @@
 import React from "react";
-import Button from "./../../components/Button/Button";
 import styles from "./Hero.module.scss";
-import logo from "./../../images/logo.svg";
-import photo1 from "./../../images/placeholders/140806235439931.jpg";
-import photo2 from "./../../images/placeholders/1970393584334891.jpg";
-import photo3 from "./../../images/placeholders/2322237303125993.jpg";
-import photo4 from "./../../images/placeholders/3940718421009415.jpg";
-import photo5 from "./../../images/placeholders/4503668374211989.jpg";
-import photo6 from "./../../images/placeholders/63472675994358110.jpg";
-import photo7 from "./../../images/placeholders/63965257213259025.jpg";
+
+import mountainPhoto from "./../../images/placeholders/1022317184135886711.jpg";
+import travelPhoto from "./../../images/placeholders/113856696826524513.jpg";
+import portraitPhoto from "./../../images/placeholders/195414071327234887.jpg";
+import filmPhotoOne from "./../../images/placeholders/2322237303125993.jpg";
+import filmPhotoTwo from "./../../images/placeholders/3940718421009415.jpg";
+import camera from "./../../images/cameras/panasonic_lumix_1.avif";
 
 const Hero: React.FC = () => {
-   const handleScroll = () => {
-      document.getElementById("cameras")?.scrollIntoView({ behavior: "smooth" });
-   };
-
    return (
       <section id="home" className={styles.hero} aria-labelledby="hero-heading">
-         <div className={styles.hero__collage}>
-            <article className={`${styles.scrap} ${styles.hero__headline}`}>
-               <p className={styles.hero__headlineText}>Good<br />Cameras.<br />Brighter<br />Stories.</p>
-               <span className={styles.hero__rule} />
-               <p className={styles.hero__smallCopy}>Rent.<br />Shoot.<br />Explore.<br />Repeat.</p>
-            </article>
-
-            <figure className={`${styles.photo} ${styles.hero__leafPhoto}`}>
-               <img src={photo1} alt="" />
-            </figure>
-
-            <article className={`${styles.scrap} ${styles.hero__mantra}`}>
-               <p>Collect<br />Moments.<br /><em>Not Things.</em></p>
-               <span>♡</span>
-            </article>
-
-            <div className={styles.hero__filmstrip} aria-hidden="true">
-               {[photo2, photo3, photo4].map((src, index) => (
-                  <div key={src} className={styles.hero__filmFrame}>
-                     <img src={src} alt="" />
-                     <span>{String(index + 1).padStart(2, "0")}</span>
-                  </div>
-               ))}
+         <div className={styles.hero__canvas}>
+            <div className={styles.hero__copy}>
+               <p className={styles.hero__kicker}>CAMERAS FOR A MORE</p>
+               <h1 id="hero-heading">
+                  <span className={styles.hero__serif}>Meaningful</span>
+                  <span className={styles.hero__script}>Tomorrow</span>
+               </h1>
+               <p className={styles.hero__description}>
+                  Rent a camera. Keep the moments. High-quality cameras for your
+                  trips, dates, events, and everyday stories in Davao City.
+               </p>
+               <a className={styles.hero__cta} href="#cameras">
+                  BROWSE CAMERAS <span aria-hidden="true">→</span>
+               </a>
             </div>
 
-            <article className={`${styles.scrap} ${styles.hero__location}`}>
-               <p className={styles.hero__locationLead}>Some places<br />feel like home.</p>
-               <span className={styles.hero__rule} />
-               <p>Davao City<br />Philippines</p>
-               <span className={styles.hero__pin}>●</span>
-            </article>
+            <div className={styles.hero__visual} aria-label="ClickMate memory collage">
+               <figure className={`${styles.hero__polaroid} ${styles.hero__mountain}`}>
+                  <img src={mountainPhoto} alt="" />
+                  <figcaption>Davao, always a good idea.</figcaption>
+               </figure>
 
-            <article className={`${styles.scrap} ${styles.hero__adventure}`}>
-               <p>Same Cameras.<br /><em>New Adventures.</em></p>
-               <span>♡</span>
-            </article>
+               <figure className={`${styles.hero__polaroid} ${styles.hero__portrait}`}>
+                  <img src={portraitPhoto} alt="" />
+               </figure>
 
-            <figure className={`${styles.photo} ${styles.hero__cameraPhoto}`}>
-               <img src={photo5} alt="" />
-               <figcaption>Davao looks better through a camera. ♡</figcaption>
-            </figure>
+               <div className={styles.hero__filmstrip} aria-hidden="true">
+                  <div><img src={filmPhotoOne} alt="" /></div>
+                  <div><img src={filmPhotoTwo} alt="" /></div>
+                  <div><img src={travelPhoto} alt="" /></div>
+               </div>
 
-            <figure className={`${styles.photo} ${styles.hero__cityPhoto}`}>
-               <img src={photo6} alt="" />
-            </figure>
+               <div className={styles.hero__note}>
+                  Collect<br />
+                  Moments.<br />
+                  Not Things.
+                  <span>♡</span>
+               </div>
 
-            <article className={styles.hero__brandCard}>
-               <img src={logo} alt="" className={styles.hero__logo} />
-               <p className={styles.hero__eyebrow}>CLICKMATE RENTALS</p>
-               <h1 id="hero-heading">For the stories you want to keep.</h1>
-               <p className={styles.hero__brandCopy}>
-                  Digital cameras for everyday adventures, little trips, and the moments that deserve more than a phone photo.
-               </p>
-               <Button onClick={handleScroll} variant="primary" size="medium">
-                  Browse Cameras
-               </Button>
-            </article>
+               <div className={styles.hero__memoryNote}>
+                  Good<br />
+                  Photos.<br />
+                  Better<br />
+                  Memories.
+               </div>
 
-            <article className={`${styles.scrap} ${styles.hero__categories}`}>
-               <p>Digital Cameras</p>
-               <p>Film Cameras</p>
-               <p>Action Cameras</p>
-               <p>Lenses</p>
-               <p>Accessories</p>
-               <span>For your next story</span>
-            </article>
+               <img className={styles.hero__camera} src={camera} alt="" />
 
-            <figure className={`${styles.photo} ${styles.hero__memoryPhoto}`}>
-               <img src={photo7} alt="" />
-               <figcaption>People · Places · Moments</figcaption>
-            </figure>
+               <div className={styles.hero__stamp}>
+                  <span>20</span>
+                  <small>POSTAGE</small>
+               </div>
 
-            <article className={`${styles.scrap} ${styles.hero__quote}`}>
-               <p>Photographs make time feel slower and life feel fuller.</p>
-               <span>♡</span>
-            </article>
+               <div className={styles.hero__flowerCluster} aria-hidden="true">
+                  <span>✿</span>
+                  <span>✤</span>
+                  <span>✿</span>
+               </div>
+            </div>
          </div>
       </section>
    );
