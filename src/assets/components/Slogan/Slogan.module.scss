@@ -1,30 +1,28 @@
-// Slogan.module.scss
-@use './../../styles/abstracts/variables' as *;
-@use './../../styles/abstracts/functions' as *;
-
-$ff-slogan: 'Times New Roman', Times, serif;
-$fs-slogan: font-size('body', 'xsmall'); // 12px
-$fw-slogan: font-weight('medium');
-$clr-slogan: color('slogan', 'text');
+@use "./../../styles/abstracts/variables" as *;
+@use "./../../styles/abstracts/functions" as *;
 
 .slogan {
-   height: 1.875rem;
-   background-color: var(--clr-bg-base);
-   &__wrapper {
-      max-width: 1078px;
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
+   min-height: 1.9rem;
+   background: #d7d0bc;
+   border-bottom: 1px solid rgba(53, 64, 45, 0.18);
 
+   &__wrapper {
+      max-width: 76rem;
+      width: 100%;
+      min-height: 1.9rem;
+      margin: 0 auto;
+      padding-inline: $layout-gutter;
       display: flex;
       justify-content: center;
       align-items: center;
    }
+
    &__text {
-      font-family: $ff-slogan;
-      font-size: $fs-slogan;
-      font-weight: $fw-slogan;
-      letter-spacing: 1.28px;
-      color: $clr-slogan;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 0.69rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: #3d4835;
+      text-transform: uppercase;
    }
 }

@@ -1,6 +1,6 @@
 import "./App.scss";
 import { Slogan, Navbar } from "./assets/components";
-import { Hero, Cameras } from "./assets/sections";
+import { Hero, Cameras, Details } from "./assets/sections";
 
 function App() {
    return (
@@ -10,6 +10,7 @@ function App() {
          <main>
             <Hero />
             <Cameras />
+            <Details />
          </main>
       </>
    );
