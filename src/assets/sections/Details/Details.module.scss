@@ -1,57 +1,34 @@
 @use "./../../styles/abstracts/variables" as *;
 
+$ink: #383a2d;
+$paper: #e1d7c6;
+$paper-dark: #d5cab6;
+$paper-mid: #c9bea9;
+$olive: #565845;
+$olive-mid: #6e6e59;
+$sage: #948f79;
+
 .details {
-   color: #31382a;
+   color: $ink;
    background:
-      linear-gradient(rgba(218, 205, 183, 0.97), rgba(218, 205, 183, 0.97)),
-      repeating-linear-gradient(0deg, transparent 0 6px, rgba(49, 56, 42, 0.025) 6px 7px);
+      linear-gradient(rgba(220, 209, 191, 0.97), rgba(220, 209, 191, 0.97)),
+      repeating-linear-gradient(0deg, transparent 0 6px, rgba(56, 58, 45, 0.03) 6px 7px);
 
    &__benefits {
       position: relative;
       max-width: 64rem;
       min-height: 17.5rem;
       margin: 0 auto;
-      padding: 3.3rem 8.7rem 2.2rem 20.3rem;
+      padding: 3.25rem 8.7rem 2.2rem 20.3rem;
 
       > h2 {
          width: 100%;
          padding-bottom: 0.55rem;
          font-family: "Kollektif", sans-serif;
-         font-size: 0.69rem;
+         font-size: 0.67rem;
          font-weight: 700;
          letter-spacing: 0.31em;
-         border-bottom: 1px solid rgba(49, 56, 42, 0.32);
-      }
-
-      &::before {
-         content: "More\A Adventures\A Here! ♡";
-         white-space: pre;
-         position: absolute;
-         left: 11rem;
-         top: 8.1rem;
-         padding: 1rem 1.2rem;
-         font-family: "Segoe Print", "Bradley Hand", cursive;
-         font-size: 0.78rem;
-         line-height: 1.2;
-         background: #ddd2b8;
-         transform: rotate(-8deg);
-      }
-
-      &::after {
-         content: "It’s not just\A a camera.\A\A It’s a different\A way of seeing\A the world.\A ♡";
-         white-space: pre;
-         position: absolute;
-         right: 0.3rem;
-         top: 4.3rem;
-         width: 13.2rem;
-         padding: 1.3rem 1rem;
-         font-family: "Segoe Print", "Bradley Hand", cursive;
-         font-size: 0.78rem;
-         line-height: 1.2;
-         text-align: center;
-         background: #ded3b8;
-         transform: rotate(-3deg);
-         box-shadow: -0.55rem 0.45rem 0 #40503b;
+         border-bottom: 1px solid rgba(56, 58, 45, 0.32);
       }
    }
 
@@ -59,7 +36,7 @@
       margin-top: 1.9rem;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.9rem;
+      gap: 1.8rem;
 
       article {
          position: relative;
@@ -67,11 +44,11 @@
          & + article::before {
             content: "";
             position: absolute;
-            left: -0.95rem;
+            left: -0.9rem;
             top: 0.6rem;
             bottom: 0.2rem;
             width: 1px;
-            background: rgba(49, 56, 42, 0.13);
+            background: rgba(56, 58, 45, 0.13);
          }
       }
 
@@ -79,7 +56,7 @@
          width: 2rem;
          height: 2rem;
          fill: none;
-         stroke: #31382a;
+         stroke: $ink;
          stroke-width: 2;
          stroke-linecap: round;
          stroke-linejoin: round;
@@ -88,50 +65,146 @@
       h3 {
          margin-top: 0.55rem;
          font-family: "Spectral", serif;
-         font-size: 0.88rem;
+         font-size: 0.86rem;
          font-weight: 700;
       }
 
       p {
          margin-top: 0.3rem;
          font-family: "Spectral", serif;
-         font-size: 0.74rem;
-         line-height: 1.32;
+         font-size: 0.72rem;
+         line-height: 1.3;
       }
+   }
+
+   &__leftFilmstrip {
+      position: absolute;
+      z-index: 2;
+      left: -2.2rem;
+      top: 0.7rem;
+      width: 7.6rem;
+      height: 19rem;
+      padding: 0.75rem 0.55rem;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 0.32rem;
+      background: #24251d;
+      border: 0.24rem solid #24251d;
+      box-shadow: 0 8px 16px rgba(38, 34, 25, 0.14);
+      transform: rotate(-7deg);
+
+      div {
+         overflow: hidden;
+         border: 0.16rem solid #24251d;
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(0.24) saturate(0.6) contrast(0.88);
+         }
+      }
+   }
+
+   &__leftNote {
+      position: absolute;
+      z-index: 4;
+      left: 7.9rem;
+      top: 8rem;
+      padding: 0.95rem 1rem;
+      font-family: "Segoe Print", "Bradley Hand", cursive;
+      font-size: 0.75rem;
+      line-height: 1.15;
+      background: $paper-dark;
+      transform: rotate(-7deg);
+   }
+
+   &__worldNote {
+      position: absolute;
+      z-index: 5;
+      right: 0.3rem;
+      top: 4.2rem;
+      width: 13rem;
+      padding: 1.25rem 1rem;
+      font-family: "Segoe Print", "Bradley Hand", cursive;
+      font-size: 0.77rem;
+      line-height: 1.18;
+      text-align: center;
+      background: $paper;
+      transform: rotate(-3deg);
+      box-shadow: -0.55rem 0.45rem 0 $olive;
+
+      span {
+         display: block;
+         margin-top: 0.2rem;
+      }
+   }
+
+   &__botanical {
+      position: absolute;
+      z-index: 1;
+      width: 8rem;
+      height: 16rem;
+      fill: $olive;
+      stroke: $olive;
+      stroke-width: 2;
+      opacity: 0.76;
+   }
+
+   &__botanicalRight {
+      right: -3.2rem;
+      top: 0;
+      transform: rotate(160deg);
    }
 
    &__story {
       position: relative;
       min-height: 15.7rem;
       overflow: hidden;
-      background: #75816a;
+      background:
+         linear-gradient(rgba(86, 88, 69, 0.74), rgba(56, 58, 45, 0.8)),
+         repeating-linear-gradient(90deg, transparent 0 7px, rgba(225, 215, 198, 0.025) 7px 8px);
+   }
 
-      &::before {
-         content: "";
+   &__mountains {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+
+      i {
          position: absolute;
-         inset: 0;
-         z-index: 1;
-         background:
-            linear-gradient(160deg, transparent 0 10%, rgba(58, 70, 49, 0.82) 11% 35%, transparent 36%),
-            linear-gradient(205deg, transparent 0 9%, rgba(42, 54, 39, 0.86) 10% 39%, transparent 40%),
-            linear-gradient(148deg, transparent 0 13%, rgba(84, 92, 62, 0.65) 14% 46%, transparent 47%);
-         opacity: 0.95;
+         bottom: -1.5rem;
+         display: block;
+         background: $olive;
+         clip-path: polygon(0 100%, 17% 52%, 28% 68%, 47% 23%, 63% 58%, 75% 39%, 100% 100%);
+      }
+
+      i:nth-child(1) {
+         left: -7%;
+         width: 58%;
+         height: 13rem;
+         background: #6e6e59;
+         opacity: 0.92;
+      }
+
+      i:nth-child(2) {
+         left: 27%;
+         width: 53%;
+         height: 14rem;
+         background: #4d503e;
+      }
+
+      i:nth-child(3) {
+         right: -8%;
+         width: 48%;
+         height: 11rem;
+         background: #646650;
+         opacity: 0.9;
       }
    }
 
-   &__landscape {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: sepia(0.3) saturate(0.5) contrast(0.88) brightness(0.65);
-      mix-blend-mode: multiply;
-      opacity: 0.78;
-   }
-
-   &__filmstrip {
+   &__storyFilmstrip {
       position: absolute;
       z-index: 4;
       left: -0.6rem;
@@ -154,64 +227,71 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: sepia(0.18) saturate(0.7);
+            filter: sepia(0.2) saturate(0.6);
          }
       }
-   }
-
-   &__adventureNote {
-      position: absolute;
-      z-index: 5;
-      left: 8.7rem;
-      top: 1.8rem;
-      padding: 1rem 1.15rem;
-      font-family: "Segoe Print", "Bradley Hand", cursive;
-      font-size: 0.75rem;
-      line-height: 1.15;
-      background: #dcd0b5;
-      transform: rotate(-6deg);
    }
 
    &__quote {
       position: absolute;
       z-index: 5;
       left: 14%;
-      bottom: 1.6rem;
-      padding: 0.8rem 1.25rem;
+      bottom: 1.5rem;
+      padding: 0.85rem 1.25rem;
       font-family: "Spectral", serif;
-      font-size: 0.86rem;
-      line-height: 1.32;
+      font-size: 0.84rem;
+      line-height: 1.3;
       text-align: center;
-      background: #d9cdb4;
+      background: $paper-dark;
       transform: rotate(2deg);
+   }
+
+   &__landscapeCard {
+      position: absolute;
+      z-index: 4;
+      left: 47%;
+      bottom: -0.5rem;
+      width: 9.5rem;
+      height: 8.8rem;
+      padding: 0.45rem;
+      background: $paper;
+      transform: rotate(3deg);
+      box-shadow: 0 7px 13px rgba(43, 39, 29, 0.12);
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         filter: sepia(0.28) saturate(0.55) contrast(0.88);
+      }
    }
 
    &__seeDavao {
       position: absolute;
       z-index: 5;
       right: 14%;
-      bottom: 1.4rem;
+      bottom: 1.3rem;
       padding: 0.8rem 1.1rem;
       font-family: "Segoe Print", "Bradley Hand", cursive;
-      font-size: 0.83rem;
+      font-size: 0.82rem;
       line-height: 1.05;
       text-align: center;
-      background: #ddd1b7;
+      background: $paper;
       transform: rotate(-4deg);
 
       span {
-         font-size: 1.2rem;
+         font-size: 1.18rem;
       }
    }
 
    &__postmark {
       position: absolute;
       z-index: 6;
-      right: 5.2%;
-      bottom: 0.9rem;
+      right: 5.1%;
+      bottom: 0.85rem;
       width: 5.2rem;
       height: 5.2rem;
-      border: 2px solid #31382a;
+      border: 2px solid $ink;
       border-radius: 50%;
       display: grid;
       place-items: center;
@@ -234,7 +314,7 @@
          left: 14%;
          right: 14%;
          height: 1px;
-         background: #31382a;
+         background: $ink;
       }
 
       &::before { top: 33%; }
@@ -248,8 +328,8 @@
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 1.5rem;
-      background: #e5dac3;
-      border-top: 1px solid rgba(49, 56, 42, 0.14);
+      background: #e4dccc;
+      border-top: 1px solid rgba(56, 58, 45, 0.14);
    }
 
    &__footerBrand {
@@ -279,7 +359,7 @@
          font-size: 0.49rem;
          font-weight: 700;
          letter-spacing: 0.14em;
-         color: #31382a;
+         color: $ink;
       }
    }
 
@@ -296,7 +376,7 @@
       i {
          width: 1px;
          height: 1.8rem;
-         background: rgba(49, 56, 42, 0.32);
+         background: rgba(56, 58, 45, 0.32);
       }
 
       p {
@@ -312,10 +392,18 @@
       &__benefits {
          padding: 2.8rem $layout-gutter 3rem;
 
-         &::before,
-         &::after {
+         &__leftFilmstrip,
+         &__leftNote,
+         &__worldNote {
             display: none;
          }
+      }
+
+      &__leftFilmstrip,
+      &__leftNote,
+      &__worldNote,
+      &__botanical {
+         display: none;
       }
 
       &__benefitGrid {
@@ -346,7 +434,7 @@
 
          article {
             padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(49, 56, 42, 0.12);
+            border-bottom: 1px solid rgba(56, 58, 45, 0.12);
          }
       }
 
@@ -354,21 +442,22 @@
          min-height: 27rem;
       }
 
-      &__filmstrip {
+      &__storyFilmstrip {
          width: 5rem;
          height: 15.5rem;
-      }
-
-      &__adventureNote {
-         left: 4rem;
-         top: 1.2rem;
-         font-size: 0.67rem;
       }
 
       &__quote {
          left: 23%;
          bottom: 1.5rem;
          font-size: 0.74rem;
+      }
+
+      &__landscapeCard {
+         left: 37%;
+         bottom: 8rem;
+         width: 8rem;
+         height: 7rem;
       }
 
       &__seeDavao {

@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./Details.module.scss";
 import logo from "./../../images/logo.svg";
 
-import filmOne from "./../../images/placeholders/4503668374211989.jpg";
-import filmTwo from "./../../images/placeholders/63472675994358110.jpg";
-import filmThree from "./../../images/placeholders/63965257213259025.jpg";
-import landscape from "./../../images/placeholders/113856696826524513.jpg";
+import filmOne from "./../../images/placeholders/Change Your Perspective.jpg";
+import filmTwo from "./../../images/placeholders/Green vibes.jpg";
+import filmThree from "./../../images/placeholders/Jasmin.jpg";
+import landscape from "./../../images/placeholders/ethereal shoot.jpg";
 
 const CameraIcon = () => (
    <svg viewBox="0 0 48 48" aria-hidden="true">
@@ -26,10 +26,35 @@ const HeartIcon = () => (
    </svg>
 );
 
+const Botanical = ({ className }: { className: string }) => (
+   <svg className={className} viewBox="0 0 150 320" aria-hidden="true">
+      <path d="M76 312C72 255 75 204 86 158C96 111 112 69 132 17" />
+      <ellipse cx="89" cy="247" rx="29" ry="13" transform="rotate(-35 89 247)" />
+      <ellipse cx="59" cy="203" rx="31" ry="14" transform="rotate(34 59 203)" />
+      <ellipse cx="101" cy="157" rx="30" ry="13" transform="rotate(-39 101 157)" />
+      <ellipse cx="70" cy="111" rx="27" ry="12" transform="rotate(32 70 111)" />
+      <ellipse cx="119" cy="67" rx="26" ry="11" transform="rotate(-43 119 67)" />
+   </svg>
+);
+
 const Details: React.FC = () => {
    return (
       <section className={styles.details}>
          <div id="how-it-works" className={styles.details__benefits}>
+            <div className={styles.details__leftFilmstrip} aria-hidden="true">
+               <div><img src={filmOne} alt="" /></div>
+               <div><img src={filmTwo} alt="" /></div>
+               <div><img src={filmThree} alt="" /></div>
+            </div>
+
+            <aside className={styles.details__leftNote}>
+               More<br />
+               Adventures<br />
+               Here! ♡
+            </aside>
+
+            <Botanical className={`${styles.details__botanical} ${styles.details__botanicalRight}`} />
+
             <h2>WHY RENT WITH CLICKMATE?</h2>
 
             <div className={styles.details__benefitGrid}>
@@ -42,7 +67,7 @@ const Details: React.FC = () => {
                <article>
                   <LeafIcon />
                   <h3>Flexible Rentals</h3>
-                  <p>Daily and multi-day options that fit your plans.</p>
+                  <p>Daily and multi-day options for your plans.</p>
                </article>
 
                <article>
@@ -51,19 +76,26 @@ const Details: React.FC = () => {
                   <p>Based in Davao City, for creators, travelers, and everyone in between.</p>
                </article>
             </div>
+
+            <aside className={styles.details__worldNote}>
+               It’s not just<br />
+               a camera.<br /><br />
+               It’s a different<br />
+               way of seeing<br />
+               the world.
+               <span>♡</span>
+            </aside>
          </div>
 
          <div id="about" className={styles.details__story}>
-            <div className={styles.details__filmstrip} aria-hidden="true">
+            <div className={styles.details__mountains} aria-hidden="true">
+               <i /><i /><i />
+            </div>
+
+            <div className={styles.details__storyFilmstrip} aria-hidden="true">
                <div><img src={filmOne} alt="" /></div>
                <div><img src={filmTwo} alt="" /></div>
                <div><img src={filmThree} alt="" /></div>
-            </div>
-
-            <div className={styles.details__adventureNote}>
-               More<br />
-               Adventures<br />
-               Here! ♡
             </div>
 
             <blockquote className={styles.details__quote}>
@@ -72,7 +104,9 @@ const Details: React.FC = () => {
                than a phone camera.”
             </blockquote>
 
-            <img className={styles.details__landscape} src={landscape} alt="" />
+            <figure className={styles.details__landscapeCard}>
+               <img src={landscape} alt="" />
+            </figure>
 
             <div className={styles.details__seeDavao}>
                See Davao<br />
