@@ -1,25 +1,32 @@
 import React from "react";
 import styles from "./Hero.module.scss";
 import camera from "./../../images/cameras/panasonic_lumix_1.avif";
+import heroLandscape from "./../../images/placeholders/1022317184135886711.jpg";
+import heroPhotographer from "./../../images/placeholders/195414071327234887.jpg";
+import filmOne from "./../../images/placeholders/2322237303125993.jpg";
+import filmTwo from "./../../images/placeholders/3940718421009415.jpg";
+import filmThree from "./../../images/placeholders/4503668374211989.jpg";
+import flowerPlaceholder from "./../../images/placeholders/ivy plant.jpg";
 
 type MediaSlotProps = {
    className: string;
    slot: string;
+   src: string;
    caption?: string;
 };
 
-const MediaSlot = ({ className, slot, caption }: MediaSlotProps) => (
+const MediaSlot = ({ className, slot, src, caption }: MediaSlotProps) => (
    <figure className={className} data-media-slot={slot}>
-      <div className={styles.hero__mediaFill} aria-hidden="true" />
+      <img className={styles.hero__mediaImage} src={src} alt="" />
       {caption ? <figcaption>{caption}</figcaption> : null}
    </figure>
 );
 
 const FilmStrip = () => (
    <div className={styles.hero__filmstrip} data-media-slot="hero-film-strip" aria-hidden="true">
-      <div className={styles.hero__filmFrame} />
-      <div className={styles.hero__filmFrame} />
-      <div className={styles.hero__filmFrame} />
+      <div className={styles.hero__filmFrame}><img src={filmOne} alt="" /></div>
+      <div className={styles.hero__filmFrame}><img src={filmTwo} alt="" /></div>
+      <div className={styles.hero__filmFrame}><img src={filmThree} alt="" /></div>
    </div>
 );
 
@@ -50,11 +57,13 @@ const Hero: React.FC = () => {
                <MediaSlot
                   className={`${styles.hero__polaroid} ${styles.hero__landscape}`}
                   slot="hero-landscape"
+                  src={heroLandscape}
                   caption="Davao, always a good idea."
                />
                <MediaSlot
                   className={`${styles.hero__polaroid} ${styles.hero__photographer}`}
                   slot="hero-photographer"
+                  src={heroPhotographer}
                />
                <FilmStrip />
 
@@ -78,7 +87,9 @@ const Hero: React.FC = () => {
                   <small>✿</small>
                </div>
 
-               <div className={styles.hero__flowerMass} data-media-slot="hero-flowers" aria-hidden="true" />
+               <div className={styles.hero__flowerMass} data-media-slot="hero-flowers" aria-hidden="true">
+                  <img src={flowerPlaceholder} alt="" />
+               </div>
 
                <img className={styles.hero__camera} src={camera} alt="" />
             </div>

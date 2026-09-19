@@ -1,6 +1,15 @@
 import React from "react";
 import styles from "./Details.module.scss";
 import logo from "./../../images/logo.svg";
+import benefitsFilmOne from "./../../images/placeholders/63472675994358110.jpg";
+import benefitsFilmTwo from "./../../images/placeholders/63965257213259025.jpg";
+import benefitsFilmThree from "./../../images/placeholders/113856696826524513.jpg";
+import botanicalPlaceholder from "./../../images/placeholders/Planto.jpg";
+import panoramaPlaceholder from "./../../images/placeholders/Green vibes.jpg";
+import bottomFilmOne from "./../../images/placeholders/140806235439931.jpg";
+import bottomFilmTwo from "./../../images/placeholders/1970393584334891.jpg";
+import bottomFilmThree from "./../../images/placeholders/Cute (1).jpg";
+import bottomPhoto from "./../../images/placeholders/ethereal shoot.jpg";
 
 const CameraIcon = () => (
    <svg viewBox="0 0 48 48" aria-hidden="true">
@@ -21,9 +30,19 @@ const HeartIcon = () => (
    </svg>
 );
 
-const FilmStripPlaceholder = ({ className, slot }: { className: string; slot: string }) => (
+const FilmStripPlaceholder = ({
+   className,
+   slot,
+   images,
+}: {
+   className: string;
+   slot: string;
+   images: string[];
+}) => (
    <div className={className} data-media-slot={slot} aria-hidden="true">
-      <div /><div /><div />
+      {images.map((src) => (
+         <div key={src}><img src={src} alt="" /></div>
+      ))}
    </div>
 );
 
@@ -34,6 +53,7 @@ const Details: React.FC = () => {
             <FilmStripPlaceholder
                className={styles.details__leftFilmstrip}
                slot="benefits-film-strip"
+               images={[benefitsFilmOne, benefitsFilmTwo, benefitsFilmThree]}
             />
 
             <aside className={styles.details__leftNote}>
@@ -42,7 +62,9 @@ const Details: React.FC = () => {
                Here! ♡
             </aside>
 
-            <div className={styles.details__benefitDecor} data-media-slot="benefits-botanical" aria-hidden="true" />
+            <div className={styles.details__benefitDecor} data-media-slot="benefits-botanical" aria-hidden="true">
+               <img src={botanicalPlaceholder} alt="" />
+            </div>
 
             <h2>WHY RENT WITH CLICKMATE?</h2>
 
@@ -77,11 +99,14 @@ const Details: React.FC = () => {
          </div>
 
          <div id="about" className={styles.details__story}>
-            <div className={styles.details__panoramaSlot} data-media-slot="bottom-panorama" aria-hidden="true" />
+            <div className={styles.details__panoramaSlot} data-media-slot="bottom-panorama" aria-hidden="true">
+               <img src={panoramaPlaceholder} alt="" />
+            </div>
 
             <FilmStripPlaceholder
                className={styles.details__storyFilmstrip}
                slot="bottom-film-strip"
+               images={[bottomFilmOne, bottomFilmTwo, bottomFilmThree]}
             />
 
             <blockquote className={styles.details__quote}>
@@ -91,7 +116,7 @@ const Details: React.FC = () => {
             </blockquote>
 
             <figure className={styles.details__landscapeCard} data-media-slot="bottom-photo">
-               <div aria-hidden="true" />
+               <img src={bottomPhoto} alt="" />
             </figure>
 
             <div className={styles.details__seeDavao}>

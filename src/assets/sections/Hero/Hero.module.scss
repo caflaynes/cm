@@ -472,3 +472,35 @@ $sage: #8e9079;
       }
    }
 }
+\n
+.hero__mediaImage {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: sepia(0.18) saturate(0.68) contrast(0.92);
+}
+
+.hero__filmFrame {
+   overflow: hidden;
+}
+
+.hero__filmFrame img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: sepia(0.18) saturate(0.66) contrast(0.9);
+}
+
+.hero__flowerMass {
+   overflow: hidden;
+   background: rgba(224, 216, 198, 0.88);
+}
+
+.hero__flowerMass img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   mix-blend-mode: multiply;
+   opacity: 0.8;
+   filter: sepia(0.18) saturate(0.62) contrast(0.9);
+}

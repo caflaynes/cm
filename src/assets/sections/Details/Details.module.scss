@@ -423,3 +423,55 @@ $olive-soft: #72725e;
       }
    }
 }
+\n
+.details__leftFilmstrip div,
+.details__storyFilmstrip div {
+   overflow: hidden;
+}
+
+.details__leftFilmstrip img,
+.details__storyFilmstrip img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: sepia(0.2) saturate(0.62) contrast(0.9);
+}
+
+.details__benefitDecor {
+   overflow: hidden;
+   background: transparent;
+   opacity: 0.72;
+}
+
+.details__benefitDecor img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   mix-blend-mode: multiply;
+   filter: sepia(0.22) saturate(0.58) contrast(0.9);
+}
+
+.details__panoramaSlot {
+   overflow: hidden;
+}
+
+.details__panoramaSlot > img {
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: sepia(0.24) saturate(0.52) contrast(0.86) brightness(0.78);
+   opacity: 0.72;
+}
+
+.details__landscapeCard {
+   overflow: hidden;
+}
+
+.details__landscapeCard > img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: sepia(0.2) saturate(0.6) contrast(0.9);
+}
